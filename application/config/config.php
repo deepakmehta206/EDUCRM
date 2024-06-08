@@ -26,7 +26,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 // $config['base_url'] = 'http://localhost/zeqon/' ;
 
 $root=(isset($_SERVER['HTTPS']) ? "https://" : "http://").$_SERVER['HTTP_HOST'];
-if($_SERVER['HTTP_HOST'] =='localhost' || $_SERVER['HTTP_HOST'] =='localhost:8080'){
+if($_SERVER['HTTP_HOST'] =='localhost' || $_SERVER['HTTP_HOST'] =='localhost:7001'){
 	//Localhost Url
 	 $config['base_url'] = $root.'/EDUCRM/';
 	//$config['base_url'] = $root.'/CRM/';

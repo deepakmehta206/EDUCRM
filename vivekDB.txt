@@ -1,0 +1,7 @@
+ALTER TABLE `eduwev84_test`.`lead_reminder` 
+ADD COLUMN `status` INT NULL DEFAULT 0 AFTER `updated_at`;
+
+ALTER TABLE `eduwev84_test`.`institute` 
+ADD COLUMN `landingProfile` VARCHAR(225) NULL DEFAULT NULL AFTER `updated_at`,
+ADD COLUMN `profileImage` VARCHAR(225) NULL DEFAULT NULL AFTER `landingProfile`,
+CHANGE COLUMN `institute_sig` `institute_sig` VARCHAR(200) NULL DEFAULT NULL ;
