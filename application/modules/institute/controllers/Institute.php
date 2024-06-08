@@ -3079,11 +3079,13 @@ class Institute extends CI_Controller
 
   public function enquiryNew()
   {
+    // $this->dd($_SESSION);
     // $subdomain_arr = explode('.', $_SERVER['HTTP_HOST'], 2);
     // $where  = array('subdomain' => $subdomain_arr[0] );
-    $subdomain = $this->uri->segment(2);
+    $subdomain = 'online-leads';
     $where  = array('subdomain' => $subdomain);
     $checkLimit = $this->institute_model->getAllDataArray(TBL_INSTITUTE, $where);
+    // $this->dd($checkLimit);
 
     if (!count($checkLimit)) {
       echo "Invalid URL !";
@@ -3101,6 +3103,7 @@ class Institute extends CI_Controller
 
   public function signupForm()
   {
+    
     //$subdomain_arr = explode('.', $_SERVER['HTTP_HOST'], 2);
     $subdomain = $this->uri->segment(2);
     $where  = array('subdomain' => $subdomain);
@@ -4849,7 +4852,7 @@ class Institute extends CI_Controller
 
   public function update_institute_profile()
   {
-    //$this->dd($this->input->post());
+    // $this->dd($_FILES);
     if (isset($_POST) && !empty($_POST)) {
       $institute_id               = $this->input->post("institute_id");
       $institute_name             = $this->input->post("institute_name");

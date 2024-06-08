@@ -108,9 +108,8 @@
                 <div class="row justify-content-center">
                     <div class="col-12">
                         <div class="bgwhite profileMainDiv">
-                            <!-- <form method="POST" id="AdminAddNewManager" class="_formSubmit" action="<?php //echo base_url(); 
-                                                                                                            ?>institute/update_institute_profile" enctype="multipart/form-data"> -->
-                            <form id="AdminAddNewManager" enctype="multipart/form-data">
+                             <form method="POST" id="AdminAddNewManager" class="_formSubmit" action="<?php echo base_url();  ?>institute/update_institute_profile" enctype="multipart/form-data"> 
+                            <!-- <form id="AdminAddNewManager" enctype="multipart/form-data"> -->
                                 <!-- <div class="card">
                                     <div class="card-body"> -->
 
@@ -368,15 +367,16 @@
 
                                 <!-- <div class="row mt-3">
                                     <div class="col-12"> -->
-                                <div class="form-group row">
+                                
+                                <!-- </div>
+                                </div> -->
+                            </form>
+                            <div class="form-group row">
                                     <div class="col-12 d-flex justify-content-between">
                                         <button type="button" class="btn btn-default btn-responsive m-t-15 w-sm mb-1  _fwg500_ _fs14_  btn_hvr_effct nwFntSt" style="float: left">Back</button>
                                         <button type="submit" class=" svebtn btn-responsive m-t-15 w-sm mb-1 _wtClr_ _fwg500_ _fs14_  btn_hvr_effct nwFntSt" style="float:right">Save</button>
                                     </div>
                                 </div>
-                                <!-- </div>
-                                </div> -->
-                            </form>
                         </div>
                     </div>
                 </div>
@@ -434,10 +434,12 @@
             }
         }
         // <!-- <form method="POST" id="AdminAddNewManager" class="_formSubmit" action="<?php //echo base_url(); 
-                                                                                        ?>institute/update_institute_profile" enctype="multipart/form-data"> -->
-        $("#AdminAddNewManager").submit(function(e) {
-            e.preventDefault();
-            Swal.fire({
+                                                                                    ?>institute/update_institute_profile" enctype="multipart/form-data"> -->
+
+            $('.svebtn').on('click',function(e){
+                e.preventDefault();
+                console.log("dskcj hdbbsh");
+                Swal.fire({
                 title: "Are you sure?",
                 text: "You want update the status !",
                 icon: "warning",
@@ -448,36 +450,55 @@
             }).then((result) => {
                 if (result.isConfirmed) {
                     $('.pageLoader').show();
-                    $.ajax({
-                        type: 'POST',
-                        url: '<?= base_url('institute/update_institute_profile'); ?>',
-                        data: $(this).serialize(),
-                        success: function(data) {
-                            console.log(data);
-                            $('.pageLoader').fadeOut();
-                            var data = JSON.parse(data);
-                            if (data.status == true) {
-                                Swal.fire({
-                                    title: "UPDATED!",
-                                    text: "Profile updated Successfully.",
-                                    icon: "success"
-                                }).then((res) => {
-                                    window.location.reload();
-                                });
-                            } else if (data.status == false) {
-                                Swal.fire({
-                                    title: "ERROR!",
-                                    text: "Something went wrong. Please try again later.",
-                                    icon: "error"
-                                }).then((res) => {
-                                    window.location.reload();
-                                });
-                            }
-                        }
-                    });
+                    $('#AdminAddNewManager').submit();
+                   
                 }
             })
+                
+            })
+        // $("#AdminAddNewManager").submit(function(e) {
+        //     e.preventDefault();
+        //     Swal.fire({
+        //         title: "Are you sure?",
+        //         text: "You want update the status !",
+        //         icon: "warning",
+        //         showCancelButton: true,
+        //         confirmButtonColor: "#3085d6",
+        //         cancelButtonColor: "#d33",
+        //         confirmButtonText: "Yes, Update it!"
+        //     }).then((result) => {
+        //         if (result.isConfirmed) {
+        //             $('.pageLoader').show();
+        //             $.ajax({
+        //                 type: 'POST',
+        //                 url: '<?= base_url('institute/update_institute_profile'); ?>',
+        //                 data: $(this).serialize(),
+        //                 success: function(data) {
+        //                     console.log(data);
+        //                     $('.pageLoader').fadeOut();
+        //                     var data = JSON.parse(data);
+        //                     if (data.status == true) {
+        //                         Swal.fire({
+        //                             title: "UPDATED!",
+        //                             text: "Profile updated Successfully.",
+        //                             icon: "success"
+        //                         }).then((res) => {
+        //                             window.location.reload();
+        //                         });
+        //                     } else if (data.status == false) {
+        //                         Swal.fire({
+        //                             title: "ERROR!",
+        //                             text: "Something went wrong. Please try again later.",
+        //                             icon: "error"
+        //                         }).then((res) => {
+        //                             window.location.reload();
+        //                         });
+        //                     }
+        //                 }
+        //             });
+        //         }
+        //     })
 
 
-        });
+        // });
     </script>

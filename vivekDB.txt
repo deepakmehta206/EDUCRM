@@ -5,3 +5,6 @@ ALTER TABLE `eduwev84_test`.`institute`
 ADD COLUMN `landingProfile` VARCHAR(225) NULL DEFAULT NULL AFTER `updated_at`,
 ADD COLUMN `profileImage` VARCHAR(225) NULL DEFAULT NULL AFTER `landingProfile`,
 CHANGE COLUMN `institute_sig` `institute_sig` VARCHAR(200) NULL DEFAULT NULL ;
+
+ALTER TABLE `eduwev84_test`.`staff` 
+ADD COLUMN `subdomain` VARCHAR(45) NULL DEFAULT 'dashboard' AFTER `updated_at`;
