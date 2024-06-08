@@ -2462,7 +2462,7 @@ body {
 }
 
 .dataTables_filter label {
-	font-size: 14px;
+	font-size: 16px !important;
 	font-weight: normal;
 	font-style: normal;
 }
@@ -2477,6 +2477,10 @@ table.dataTable thead th,
 table.dataTable thead td,
 table.dataTable.no-footer {
 	border-bottom: 1px solid transparent !important;
+}
+
+table.dataTable thead th {
+	background-color: #ebeaea
 }
 
 .verIcon:hover {
@@ -5378,7 +5382,7 @@ input[type=submit]
 
 .table-responsive{
     background:white;
-    padding:10px 15px;
+    /* padding:10px 0; */
     border-radius:10px;
     margin-top: 30px;
     margin-bottom: 30px;

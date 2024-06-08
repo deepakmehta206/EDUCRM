@@ -110,7 +110,7 @@
                         <div class="bgwhite profileMainDiv">
                             <!-- <form method="POST" id="AdminAddNewManager" class="_formSubmit" action="<?php //echo base_url(); 
                                                                                                             ?>institute/update_institute_profile" enctype="multipart/form-data"> -->
-                            <form id="AdminAddNewManager">
+                            <form id="AdminAddNewManager" enctype="multipart/form-data">
                                 <!-- <div class="card">
                                     <div class="card-body"> -->
 
@@ -142,7 +142,7 @@
                                     </div>
                                     <div class="col-lg-3">
                                         <!-- <span class="colon">:</span> -->
-                                        <input onchange="readSigURL(this);" type="file" name="sig" id="fileupload1">
+                                        <input onchange="readSigURL(this);" type="file" name="sig" id="fileupload1" />
                                         <input type="hidden" name="old_sig" value="<?= $_SESSION['institute_sig']; ?>" />
                                     </div>
                                     <div class="col-lg-1">
@@ -162,7 +162,7 @@
                                     </div>
                                     <div class="col-lg-3">
                                         <!-- <span class="colon">:</span> -->
-                                        <input onchange="readURLProfile(this);" type="file" name="profileImage" id="fileUpload3">
+                                        <input onchange="readURLProfile(this);" type="file" name="profileImage" id="fileUpload3" />
                                         <input type="hidden" name="old_ProfileImage" value="<?= $_SESSION['profileImage']; ?>" />
                                     </div>
                                     <div class="col-lg-1">

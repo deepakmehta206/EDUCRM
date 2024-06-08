@@ -3170,7 +3170,7 @@ class Institute extends CI_Controller
         $institute_id = $this->security->xss_clean($_POST['institute_id']);
       }
 
-      $institute_details = $this->db->query("SELECT institute_name,institute_email,institute_mobile,institute_address,institute_website,state,institute_logo,payment_api_key,admission_fee,brochure_link,subdomain FROM institute WHERE institute_id = '" . $institute_id . "' ")->row();
+      $institute_details = $this->db->query("SELECT landingProfile,profileImage,institute_name,institute_email,institute_mobile,institute_address,institute_website,state,institute_logo,payment_api_key,admission_fee,brochure_link,subdomain FROM institute WHERE institute_id = '" . $institute_id . "' ")->row();
       $payment_link = $institute_details->payment_api_key;
       $brochure_link = $institute_details->brochure_link;
       $admission_link = base_url() . 'online-admission/' . $institute_details->subdomain;
@@ -3182,6 +3182,8 @@ class Institute extends CI_Controller
       $institute_website = $institute_details->institute_website;
       $institute_state = $institute_details->state;
       $institute_logo = $institute_details->institute_logo;
+      $landingProfile = $institute_details->landingProfile;
+      $profileImage = $institute_details->profileImage;
       $student_email = $this->security->xss_clean($_POST['email']);
       $student_mobile = $this->security->xss_clean($_POST['mobile']);
       $student_name = $this->security->xss_clean($_POST['student_name']);
@@ -4579,6 +4581,7 @@ class Institute extends CI_Controller
 
   public function profile()
   {
+   // $this->dd($_SESSION);
     $session = $this->session_check();
     if ($session == true) {
       $data['site_title'] = "EDUWEGO | profile";
@@ -4846,6 +4849,7 @@ class Institute extends CI_Controller
 
   public function update_institute_profile()
   {
+    //$this->dd($this->input->post());
     if (isset($_POST) && !empty($_POST)) {
       $institute_id               = $this->input->post("institute_id");
       $institute_name             = $this->input->post("institute_name");
@@ -4925,7 +4929,7 @@ class Institute extends CI_Controller
           $insert_array['institute_sig'] = "";
         }
       }
-
+      
       if (isset($_FILES['profileImage']) && $_FILES['profileImage'] != "" && !empty($_FILES['profileImage']['name'])) {
         $file_orignal_name = $_FILES['profileImage']['name'];
         $file_orignal_name = str_replace(' ', '-', $file_orignal_name);;
@@ -4933,6 +4937,7 @@ class Institute extends CI_Controller
         $image_name = time() . uniqid() . $file_orignal_name;
         $input_name = 'profileImage';
         $result = $this->institute_model->upload_image($path, $image_name, $input_name);
+        // $this->dd($result);
         if ($result) {
           $insert_array['profileImage'] = $path . $image_name;
         } else {

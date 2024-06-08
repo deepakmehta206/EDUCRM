@@ -3142,7 +3142,15 @@ div.jqvmap-zoomout {
   overflow-y: scroll; }
 
 .dataTables_wrapper {
-  padding: 0; }
+  padding: 0; 
+  position: relative;
+}
+
+div.dataTables_wrapper div.dataTables_filter {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
 
 .fixed-table-loading {
   display: none;
