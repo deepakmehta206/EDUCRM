@@ -28,7 +28,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $root=(isset($_SERVER['HTTPS']) ? "https://" : "http://").$_SERVER['HTTP_HOST'];
 if($_SERVER['HTTP_HOST'] =='localhost' || $_SERVER['HTTP_HOST'] =='localhost:8080'){
 	//Localhost Url
-	 $config['base_url'] = $root.'/eduwego/';
+	 $config['base_url'] = $root.'/EDUCRM/';
 	//$config['base_url'] = $root.'/CRM/';
 }else{		
 	//Live Url

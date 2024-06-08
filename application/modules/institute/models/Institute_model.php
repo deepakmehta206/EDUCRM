@@ -37,6 +37,8 @@ class Institute_model extends CI_Model{
                 'instagram_link'        => $row->instagram_link,
                 'institute_logo'        => $row->institute_logo,
                 'institute_sig'         => $row->institute_sig,
+                'landingProfile'         => $row->landingProfile,
+                'profileImage'         => $row->profileImage,
                 'institute_expiry_date' => $row->institute_expiry_date,
                 'msg_api_username'      => $row->msg_api_username,
                 'msg_api_password'      => $row->msg_api_password,

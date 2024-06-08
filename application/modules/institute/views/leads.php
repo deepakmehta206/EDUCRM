@@ -394,9 +394,9 @@ if (!empty($leads)) {
                                     </div>
                                     <ul>
                                 </div>
-                                <div style="overflow-x:scroll row">
-                                    <div class="col-lg-12">
-                                        <table id="leadTable" class="table-bordered table-responsive" role="grid" aria-describedby="clientTable_info">
+                                <div>
+                                    <div class="table-responsive">
+                                        <table id="leadTable" class="table table-bordered" role="grid" aria-describedby="clientTable_info">
 
                                             <thead>
                                                 <th><span class="text-muted _blckClr_ _fs14_ _fwg500_ nwFntSt">Sl No.</span></th>
@@ -579,9 +579,9 @@ if (!empty($leads)) {
 
                                                         <td>
 
-                                                            <!-- <td>ggg</td> -->
+                                                            <!-- <td>ggg</td>
 
-                                                            <!-- <td class="text-center">
+                                                            <td class="text-center">
                                         <i class="fa fa-pencil text-success" style="font-size:20px"></i>
                                         </td> -->
 
@@ -1272,6 +1272,9 @@ if (!empty($leads)) {
                     }
                 }
             });
+
+            $(".dataTables_filter input").addClass("form-control");
+            $(".dataTables_length select").addClass("form-control");
         }
 
         $(".filtertab .tablinks").on('click', function() {
