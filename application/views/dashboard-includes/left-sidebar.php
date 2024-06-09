@@ -32,7 +32,7 @@
                         $menus = $this->db->query("SELECT * FROM menus WHERE institute_id = '".$institute_id."' ")->row();
                     ?>
                     <ul class="nav bg" id="accordion">
-                        <li class="nav-header hidden-folded">
+                        <li class="nav-header hidden-folded border-bottom-lt-blue mb-3">
                             <span class="_fwg500_ _fs12_">Welcome to Eduwego</span>
                         </li>
                         <li class="<?php if($menus->dashboard != 'on'){echo 'd-none';} ?> <?php if($menu == 'dashboard'){echo 'tab-active';} ?>">
@@ -71,12 +71,21 @@
                             </a>
                         </li>
 
-                        <li class="<?php if($menu == 'leads'){echo 'tab-active';} ?> <?php if($menus->leads != 'on'){echo 'd-none';} ?>">
+                        <!-- <li class="<?php if($menu == 'leads'){echo 'tab-active';} ?> <?php if($menus->leads != 'on'){echo 'd-none';} ?>">
                             <a href="<?php echo base_url('institute/leads_page'); ?>" class="i-con-h-a _cmmnsdHvr_ lftBar dashboardActive">
                                 <span class="nav-icon">
                                     <i class="fa fa-check-square-o"><i></i></i>
                                 </span>
                                 <span class="">Campaigns</span>
+                            </a>
+                        </li> -->
+
+                        <li class="<?php if($menu == 'leads'){echo 'tab-active';} ?> <?php if($menus->leads != 'on'){echo 'd-none';} ?>">
+                            <a href="<?php echo base_url('institute/leads_page'); ?>" class="i-con-h-a _cmmnsdHvr_ lftBar dashboardActive">
+                                <span class="nav-icon">
+                                    <i class="fa fa-check-square-o"><i></i></i>
+                                </span>
+                                <span class="">Lead Manager</span>
                             </a>
                         </li>
                         
@@ -96,7 +105,7 @@
                         </li>
 
                         <!-- associate sub-menu -->
-                        <ul id="ivr" class="collapse <?php if($menu == 'agent'){echo 'show';} ?>" style="margin-left: 19px;">
+                        <ul id="ivr" class="collapse <?php if($menu == 'agent'){echo 'show';} ?>" style="padding-left: 11px; background-color: #216faa;">
                                 <li class="">
                                     <a href="<?php echo base_url(); ?>institute/getIvrCallsDetails" class="i-con-h-a _cmmnsdHvr_ paymentsActive">
                                         <span class="nav-text">Ivr Call Details</span>
@@ -143,7 +152,7 @@
                             </a>
                         </li>
 
-                        <ul id="questions" class="collapse <?php if($menu == 'admission'){echo 'show';} ?>" data-parent="#questions" style="margin-left: 19px;">
+                        <ul id="questions" class="collapse <?php if($menu == 'admission'){echo 'show';} ?>" data-parent="#questions" style="padding-left: 11px; background-color: #216faa;">
                             <!-- <li class="<?php if($submenu == 'enquiry'){echo 'submenu-active';} ?>">
                                 <a href="<?php echo base_url('institute/enquiry'); ?>" class="fa fa-question-circle _cmmnsdHvr_ enquiryActive">
                                     <span class="nav-text">Enquiry</span>
@@ -151,13 +160,19 @@
                             </li> -->
                             
                             <li class="<?php if($submenu == 'courses'){echo 'submenu-active';} ?>">
-                                <a href="<?php echo base_url(); ?>institute/courses" class="fa fa-graduation-cap _cmmnsdHvr_ cursesActive">
+                                <a href="<?php echo base_url(); ?>institute/courses" class="_cmmnsdHvr_ cursesActive">
+                                <span class="nav-icon">
+                                    <i class="fa fa-graduation-cap"></i>
+                                </span>
                                     <span class="nav-text">Courses</span>
                                 </a>
                             </li>
 
                             <li class="<?php if($submenu == 'online_enquiries'){echo 'submenu-active';} ?>">
-                                <a href="<?php echo base_url('institute/online_enquiries'); ?>" class="fa fa-university _cmmnsdHvr_ OadmActive">
+                                <a href="<?php echo base_url('institute/online_enquiries'); ?>" class="_cmmnsdHvr_ OadmActive">
+                                <span class="nav-icon">
+                                    <i class="fa fa-university "></i>
+                                </span>
                                     <span class="nav-text">Online Admission</span>
                                 </a>
                             </li>
@@ -173,9 +188,12 @@
                                 <span class="">Team Manager</span>
                             </a>
                         </li>
-                        <ul id="Staff" class="collapse <?php if($menu == 'staff'){echo 'show';} ?>" style="margin-left: 19px;">
+                        <ul id="Staff" class="collapse <?php if($menu == 'staff'){echo 'show';} ?>" style="padding-left: 11px; background-color: #216faa;">
                             <li class="<?php if($submenu == 'addstaff'){echo 'submenu-active';} ?>">
-                                <a href="<?php echo base_url('institute/staff'); ?>" class="i-con-h-a _cmmnsdHvr_ salesReportActive">
+                                <a href="<?php echo base_url('institute/staff'); ?>" class="_cmmnsdHvr_ salesReportActive">
+                                <span class="nav-icon">
+                                    <i class="fa fa-dot-circle-o"></i>
+                                </span>
                                     <span class="nav-text">Add Member</span>
                                 </a>
                             </li>
@@ -201,7 +219,7 @@
                         </li>
 
                         <!-- associate sub-menu -->
-                        <ul id="agent" class="collapse <?php if($menu == 'agent'){echo 'show';} ?>" style="margin-left: 19px;">
+                        <ul id="agent" class="collapse <?php if($menu == 'agent'){echo 'show';} ?>" style="padding-left: 11px; background-color: #216faa;">
                                 <li class="<?php if($submenu == 'agent_req'){echo 'submenu-active';} ?> <?php if($menus->assos_req != 'on'){echo 'd-none';} ?>">
                                     <a href="<?php echo base_url(); ?>institute/agent_requests" class="i-con-h-a _cmmnsdHvr_ paymentsActive">
                                         <span class="nav-text">Associate Requests</span>
@@ -263,7 +281,7 @@
                                 </span>
                                 <span class="">Vendor Manager</span>
                             </a>
-                            <ul id="Vendor" class="collapse" style="margin-left: 19px;">
+                            <ul id="Vendor" class="collapse" style="padding-left: 11px; background-color: #216faa;">
                                 <li>
                                     <a href="<?php echo base_url('vendor'); ?>" class="i-con-h-a _cmmnsdHvr_ vendorActive">
                                         <span class="nav-text">Add Vendor</span>
@@ -345,7 +363,7 @@
                                     <!-- <b class="badge badge-sm badge-pill bg-danger">12</b> -->
                                 </span>
                             </a>
-                            <ul id="social" class="collapse" style="margin-left: 19px;">
+                            <ul id="social" class="collapse" style="padding-left: 11px; background-color: #216faa;">
                                 <li>
                                     <a href="<?php echo $_SESSION['my_ivr_link']; ?>" class="i-con-h-a _cmmnsdHvr_ IVRActive" target="_blank">
                                         <span class="nav-text">My IVR</span>
@@ -555,7 +573,7 @@
                                 <span class="nav-text">Admission</span>
                                 <!-- <span class="nav-caret"></span> -->
                             </a>
-                            <ul id="questions" class="collapse" data-parent="#questions" style="margin-left: 19px;">
+                            <ul id="questions" class="collapse" data-parent="#questions" style="padding-left: 11px; background-color: #216faa;">
                                 <li>
                                     <a href="<?php echo base_url('institute/enquiry'); ?>" class="i-con-h-a _cmmnsdHvr_ enquiryActive">
                                         <span class="nav-text _fntwss_ ">Enquiry</span>
@@ -591,7 +609,7 @@
                                     <!-- <b class="badge badge-sm badge-pill bg-danger">12</b> -->
                                 </span>
                             </a>
-                            <ul id="agent" class="collapse" style="margin-left: 19px;">
+                            <ul id="agent" class="collapse" style="padding-left: 11px; background-color: #216faa;">
                                 <li>
                                     <a href="<?php echo base_url('institute/agent'); ?>" class="i-con-h-a _cmmnsdHvr_ agentActive">
                                         <span class="nav-text _fntwss_">Associates</span>
@@ -636,7 +654,7 @@
                                 </span>
                                 <span class="nav-text _fntwss_">Vendor Management</span>
                             </a>
-                            <ul id="Vendor" class="collapse" style="margin-left: 19px;">
+                            <ul id="Vendor" class="collapse" style="padding-left: 11px; background-color: #216faa;">
                                 <li>
                                     <a href="<?php echo base_url('vendor'); ?>" class="i-con-h-a _cmmnsdHvr_ vendorActive">
                                         <span class="nav-text _fntwss_">Add Vendor</span>
@@ -696,7 +714,7 @@
                                     <!-- <b class="badge badge-sm badge-pill bg-danger">12</b> -->
                                 </span>
                             </a>
-                            <ul id="social" class="collapse" style="margin-left: 19px;">
+                            <ul id="social" class="collapse" style="padding-left: 11px; background-color: #216faa;">
                                 <li>
                                     <a href="<?php echo $_SESSION['my_ivr_link']; ?>" class="i-con-h-a _cmmnsdHvr_ IVRActive" target="_blank">
                                         <span class="nav-text">My IVR</span>

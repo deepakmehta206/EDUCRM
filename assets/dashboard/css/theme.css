@@ -918,6 +918,10 @@ Row
   padding: 2rem;
   }
 
+.padding-y {
+  padding: 2rem 0;
+  }
+
 .row-md {
   margin-left: -0.75rem;
   margin-right: -0.75rem; }
@@ -2615,7 +2619,7 @@ Nav
         line-height: 2.25rem;
         position: relative; }
       .sidenav .nav li.active > a {
-        background-color: transparent; }
+        background-color: #095c9a; }
         .sidenav .nav li.active > a .nav-caret:after {
           transform: rotate(225deg);
           margin-bottom: 0px; }

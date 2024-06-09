@@ -22,12 +22,12 @@
       <link rel="stylesheet" href="<?php echo base_url(); ?>assets/bower-components/jquery-nice-select/css/nice-select.css">
       <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/dashboard/libs/line-awesome/line-awesome/css/line-awesome.min.css">
       <link rel="stylesheet" href="<?php echo base_url(); ?>assets/vanilla-notify/vanilla-notify.css" type="text/css" />
-     
-      <script src="https://code.highcharts.com/highcharts.js"></script>
       <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
 
       <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
       <script src="<?php echo base_url(); ?>assets/dashboard/libs/jquery/dist/jquery.min.js"></script>
       
@@ -159,7 +159,7 @@
                 <li class="nav-item dropdown notice-con mr-3">
                     <a href="<?=base_url(); ?>institute/notifications" title="Notifications"> 
                      <!-- <img src="<?php echo base_url(); ?>assets/dashboard/img/bellicon.png"> -->
-                      <i class="fa fa-bell fa-lg text-secondary"></i>
+                      <i class="bi bi-bell fa-lg text-secondary"></i>
                      <div class="notice-number"><?=$total_notice; ?></div>
                     </a>
                 </li>
@@ -177,7 +177,7 @@
                     <li class="nav-item dropdown notice-con mr-3">
                         <a href="<?=base_url(); ?>institute/notifications" title="Notifications"> 
                          <!-- <img src="<?php echo base_url(); ?>assets/dashboard/img/bellicon.png"> -->
-                         <i class="fa fa-bell fa-lg text-secondary"></i>
+                         <i class="bi bi-bell fa-lg text-secondary"></i>
                          <div class="notice-number"><?=$total_notice; ?></div>
                         </a>
                     </li>
@@ -188,8 +188,9 @@
                 <li class="nav-item dropdown notice-con mr-3">
                     <a href="javascript:void(0);" title="Assigned Tasks"> 
                       <!-- <img src="<?php echo base_url(); ?>assets/dashboard/img/bellicon.png"> -->
-                      <i class="fa fa-tasks fa-lg text-secondary"></i>
+                      <i class="bi bi-stopwatch fa-lg text-secondary"></i>
                       <!-- <div class="notice-number"><?=$total_notice; ?></div> -->
+                      <div class="notice-number">3</div>
                     </a>
                 </li>
 
