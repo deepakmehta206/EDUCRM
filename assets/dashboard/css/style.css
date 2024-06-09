@@ -31,6 +31,7 @@ body {
 	padding: 0;
 	margin: 0;
 	font-family: "Nunito", sans-serif;
+	overflow-x: hidden;
 	/* font-family: "McKinsey Theinhardt', 'Helvetica Neue', Calibri, Corbel, Helvetica, Roboto, Droid, sans-serif"; */
 }
 /*Jahan online application form*/
@@ -1581,7 +1582,7 @@ body {
 }
 
 .Login_Ryt_text p {
-	font-size: 18px;
+	font-size: 16px;
 	color: #000;
 	margin-bottom: 3px;
 	margin-top: 38px;
@@ -5345,7 +5346,7 @@ input[type=submit]
 	background: #8E294F;
 }
 .sidenav .nav li span{
-	color: #8E294F;
+	color: #ffffff;
 }
 .sidenav .nav .tab-active span{
 	color: white;
