@@ -157,8 +157,9 @@
                 $total_notice = count($notices);
                ?>
                 <li class="nav-item dropdown notice-con mr-3">
-                    <a href="<?=base_url(); ?>institute/notifications"> 
-                     <img src="<?php echo base_url(); ?>assets/dashboard/img/bellicon.png">
+                    <a href="<?=base_url(); ?>institute/notifications" title="Notifications"> 
+                     <!-- <img src="<?php echo base_url(); ?>assets/dashboard/img/bellicon.png"> -->
+                      <i class="fa fa-bell fa-lg text-secondary"></i>
                      <div class="notice-number"><?=$total_notice; ?></div>
                     </a>
                 </li>
@@ -174,14 +175,23 @@
                    $total_notice = count($notices);
                    ?>
                     <li class="nav-item dropdown notice-con mr-3">
-                        <a href="<?=base_url(); ?>institute/notifications"> 
-                         <img src="<?php echo base_url(); ?>assets/dashboard/img/bellicon.png">
+                        <a href="<?=base_url(); ?>institute/notifications" title="Notifications"> 
+                         <!-- <img src="<?php echo base_url(); ?>assets/dashboard/img/bellicon.png"> -->
+                         <i class="fa fa-bell fa-lg text-secondary"></i>
                          <div class="notice-number"><?=$total_notice; ?></div>
                         </a>
                     </li>
                     <?php
                     } 
                 ?>
+
+                <li class="nav-item dropdown notice-con mr-3">
+                    <a href="javascript:void(0);" title="Assigned Tasks"> 
+                      <!-- <img src="<?php echo base_url(); ?>assets/dashboard/img/bellicon.png"> -->
+                      <i class="fa fa-tasks fa-lg text-secondary"></i>
+                      <!-- <div class="notice-number"><?=$total_notice; ?></div> -->
+                    </a>
+                </li>
 
                 <li class="nav-item dropdown">
                   <a href="javascript:void(0);" data-toggle="dropdown" class="nav-link customDropDown d-flex align-items-center py-0 px-lg-0 px-2 text-color" aria-expanded="false">

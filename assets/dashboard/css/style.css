@@ -1582,7 +1582,7 @@ body {
 }
 
 .Login_Ryt_text p {
-	font-size: 18px;
+	font-size: 16px;
 	color: #000;
 	margin-bottom: 3px;
 	margin-top: 38px;
@@ -5346,7 +5346,7 @@ input[type=submit]
 	background: #8E294F;
 }
 .sidenav .nav li span{
-	color: #fff;
+	color: #8E294F;
 }
 .sidenav .nav .tab-active span{
 	color: white;
