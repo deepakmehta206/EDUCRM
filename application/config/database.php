@@ -75,15 +75,15 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => '119.18.54.50',
+	'hostname' =>'MYSQL5045.site4now.net',
 	
 	//  Akki's System	
 	// 'username' => 'root',
 	// 'password' => '3339',
 
-	'username' => 'eduwev84_test123',
-	'database' => 'eduwev84_test',
-	'password' => 'Digital@1993',
+	'username' => 'a8a2b2_vishal',
+	'database' => 'db_a8a2b2_cbnext',
+	'password' => 'Vishal@123',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
