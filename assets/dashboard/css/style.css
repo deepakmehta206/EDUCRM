@@ -31,6 +31,7 @@ body {
 	padding: 0;
 	margin: 0;
 	font-family: "Nunito", sans-serif;
+	overflow-x: hidden;
 	/* font-family: "McKinsey Theinhardt', 'Helvetica Neue', Calibri, Corbel, Helvetica, Roboto, Droid, sans-serif"; */
 }
 /*Jahan online application form*/
@@ -5345,7 +5346,7 @@ input[type=submit]
 	background: #8E294F;
 }
 .sidenav .nav li span{
-	color: #8E294F;
+	color: #fff;
 }
 .sidenav .nav .tab-active span{
 	color: white;
@@ -5356,7 +5357,7 @@ input[type=submit]
 }
 
 .sidenav .nav .collapse li{
-	padding-left: 20px;
+	padding-left: 6px;
 }
 
 .sidenav .nav .collapse .submenu-active{

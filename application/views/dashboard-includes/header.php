@@ -75,7 +75,7 @@
    </head>
   
    <body class="layout-column">
-       <div class="one_line"></div>
+       <div class="one_line d-none"></div>
     <header id="header" class="page-header bg-white box-shadows animate fadeInDown sticky" data-class="bg-white">
          <div class="navbar navbar-expand-lg">
             <!-- btn to toggle sidenav on small screen -->
