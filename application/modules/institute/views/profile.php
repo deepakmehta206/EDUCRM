@@ -103,19 +103,16 @@
     </div>
     <div class="page-container" id="page-container">
 
-<div class="card mt-4">
-    <div class="card-body">
-        <div class="">
-    
+        <div class="padding">
+
             <div class="row justify-content-center">
                 <div class="col-12">
                     <div class="bgwhite profileMainDiv">
-                        <!-- <form method="POST" id="AdminAddNewManager" class="_formSubmit" action="<?php //echo base_url(); 
-                                                                                                        ?>institute/update_institute_profile" enctype="multipart/form-data"> -->
-                        <form id="AdminAddNewManager" enctype="multipart/form-data">
+                        <form method="POST" id="AdminAddNewManager" class="_formSubmit" action="<?php echo base_url();  ?>institute/update_institute_profile" enctype="multipart/form-data">
+                            <!-- <form id="AdminAddNewManager" enctype="multipart/form-data"> -->
                             <!-- <div class="card">
                                     <div class="card-body"> -->
-    
+
                             <div class="row mt-3">
                                 <div class="col-lg-2">
                                     <label for="">Upload Logo:</label>
@@ -133,12 +130,12 @@
                                                                                     echo base_url() . 'assets/dashboard/img/profileimg.png';
                                                                                 } ?>">
                                     </div>
-    
+
                                 </div>
-    
-    
-    
-    
+
+
+
+
                                 <div class="col-lg-2">
                                     <label for="">Upload Signature:</label>
                                 </div>
@@ -157,7 +154,7 @@
                                     </div>
                                 </div>
                             </div>
-    
+
                             <div class="row mt-3">
                                 <div class="col-lg-2">
                                     <label for="">Upload Profile:</label>
@@ -175,12 +172,12 @@
                                                                                             echo base_url() . 'assets/dashboard/img/profileimg.png';
                                                                                         } ?>">
                                     </div>
-    
+
                                 </div>
-    
-    
-    
-    
+
+
+
+
                                 <div class="col-lg-2">
                                     <label for="">Upload Landing Profile:</label>
                                 </div>
@@ -199,10 +196,10 @@
                                     </div>
                                 </div>
                             </div>
-    
-    
-    
-    
+
+
+
+
                             <!-- </div>
                                 </div> -->
                             <div class="row mt-3">
@@ -222,8 +219,8 @@
                                     <input type="text" class="form-control _fs14_ frmBg _drkclr_ _fntwss_" name="institute_name" required placeholder="Institute Name" value="<?php echo $_SESSION['name']; ?>" autocomplete="new">
                                 </div>
                             </div>
-    
-    
+
+
                             <div class="row mt-3">
                                 <div class="col-lg-2">
                                     <label for="">Email<span class="text-danger">*</span> :</label>
@@ -239,7 +236,7 @@
                                     <input type="number" class="form-control _fs14_ frmBg _drkclr_ _fntwss_" name="landline_no" value="<?php echo $_SESSION['landline']; ?>" autocomplete="new">
                                 </div>
                             </div>
-    
+
                             <div class="row mt-3">
                                 <div class="col-lg-2">
                                     <label for="">Payment Link<span class="text-danger">*</span> :</label>
@@ -255,7 +252,7 @@
                                     <input type="website" class="form-control _fs14_ frmBg _drkclr_ _fntwss_" name="refund_link" value="<?php echo $_SESSION['refund_link']; ?>" autocomplete="new">
                                 </div>
                             </div>
-    
+
                             <div class="row mt-3">
                                 <div class="col-lg-2">
                                     <label for="">Facebook Link<span class="text-danger">*</span> :</label>
@@ -271,7 +268,7 @@
                                     <input type="website" class="form-control _fs14_ frmBg _drkclr_ _fntwss_" name="google_business_link" value="<?php echo $_SESSION['google_business_link']; ?>" autocomplete="new">
                                 </div>
                             </div>
-    
+
                             <div class="row mt-3">
                                 <div class="col-lg-2">
                                     <label for="">Brochure Download Link<span class="text-danger">*</span> :</label>
@@ -287,7 +284,7 @@
                                     <input type="text" class="form-control _fs14_ frmBg _drkclr_ _fntwss_" name="twitter_link" value="<?php echo $_SESSION['twitter_link']; ?>" autocomplete="new">
                                 </div>
                             </div>
-    
+
                             <div class="row mt-3">
                                 <div class="col-lg-2">
                                     <label for="">Instagram Link<span class="text-danger">*</span> :</label>
@@ -303,7 +300,7 @@
                                     <input type="website" class="form-control _fs14_ frmBg _drkclr_ _fntwss_" name="youtube_link" value="<?php echo $_SESSION['youtube_link']; ?>" autocomplete="new">
                                 </div>
                             </div>
-    
+
                             <div class="row mt-3">
                                 <div class="col-lg-2">
                                     <label for="">Subscription Expiry Date<span class="text-danger">*</span> :</label>
@@ -319,7 +316,7 @@
                                     <input type="text" class="form-control _fs14_ frmBg _drkclr_ _fntwss_" value="" autocomplete="new" disabled />
                                 </div>
                             </div>
-    
+
                             <div class="row mt-3">
                                 <div class="col-lg-2">
                                     <label for="">Admission Fee<span class="text-danger">*</span> :</label>
@@ -335,7 +332,7 @@
                                     <textarea class="form-control _fs14_ frmBg _drkclr_ _fntwss_" name="address" required><?php echo $_SESSION['institute_address']; ?></textarea>
                                 </div>
                             </div>
-    
+
                             <div class="row mt-3">
                                 <div class="col-lg-2">
                                     <label for="">State<span class="text-danger">*</span> :</label>
@@ -351,7 +348,7 @@
                                     <input type="text" class="form-control _fs14_ frmBg _drkclr_ _fntwss_" name="city" value="<?php echo $_SESSION['city']; ?>" autocomplete="new">
                                 </div>
                             </div>
-    
+
                             <div class="row mt-3">
                                 <div class="col-lg-2">
                                     <label for="">Admission Link<span class="text-danger">*</span> :</label>
@@ -367,24 +364,23 @@
                                     <input type="website" class="form-control _fs14_ frmBg _drkclr_ _fntwss_" value="<?php echo $_SESSION['enquiry_link']; ?>" autocomplete="new" disabled>
                                 </div>
                             </div>
-    
+
                             <!-- <div class="row mt-3">
                                     <div class="col-12"> -->
-                            <div class="form-group row">
-                                <div class="col-12 d-flex justify-content-between">
-                                    <button type="button" class="btn btn-default btn-responsive m-t-15 w-sm mb-1  _fwg500_ _fs14_  btn_hvr_effct nwFntSt" style="float: left">Back</button>
-                                    <button type="submit" class=" svebtn btn-responsive m-t-15 w-sm mb-1 _wtClr_ _fwg500_ _fs14_  btn_hvr_effct nwFntSt" style="float:right">Save</button>
-                                </div>
-                            </div>
+
                             <!-- </div>
                                 </div> -->
                         </form>
+                        <div class="form-group row">
+                            <div class="col-12 d-flex justify-content-between">
+                                <button type="button" class="btn btn-default btn-responsive m-t-15 w-sm mb-1  _fwg500_ _fs14_  btn_hvr_effct nwFntSt" style="float: left">Back</button>
+                                <button type="submit" class=" svebtn btn-responsive m-t-15 w-sm mb-1 _wtClr_ _fwg500_ _fs14_  btn_hvr_effct nwFntSt" style="float:right">Save</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</div>
     </div>
     <!-- ############ Main END-->
 </div>
@@ -439,8 +435,10 @@
     }
     // <!-- <form method="POST" id="AdminAddNewManager" class="_formSubmit" action="<?php //echo base_url(); 
                                                                                     ?>institute/update_institute_profile" enctype="multipart/form-data"> -->
-    $("#AdminAddNewManager").submit(function(e) {
+
+    $('.svebtn').on('click', function(e) {
         e.preventDefault();
+        console.log("dskcj hdbbsh");
         Swal.fire({
             title: "Are you sure?",
             text: "You want update the status !",
@@ -452,36 +450,11 @@
         }).then((result) => {
             if (result.isConfirmed) {
                 $('.pageLoader').show();
-                $.ajax({
-                    type: 'POST',
-                    url: '<?= base_url('institute/update_institute_profile'); ?>',
-                    data: $(this).serialize(),
-                    success: function(data) {
-                        console.log(data);
-                        $('.pageLoader').fadeOut();
-                        var data = JSON.parse(data);
-                        if (data.status == true) {
-                            Swal.fire({
-                                title: "UPDATED!",
-                                text: "Profile updated Successfully.",
-                                icon: "success"
-                            }).then((res) => {
-                                window.location.reload();
-                            });
-                        } else if (data.status == false) {
-                            Swal.fire({
-                                title: "ERROR!",
-                                text: "Something went wrong. Please try again later.",
-                                icon: "error"
-                            }).then((res) => {
-                                window.location.reload();
-                            });
-                        }
-                    }
-                });
+                $('#AdminAddNewManager').submit();
+
             }
         })
 
-
-    });
+    })
+  
 </script>

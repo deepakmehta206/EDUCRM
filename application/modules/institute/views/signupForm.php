@@ -47,8 +47,8 @@
                         </h4>
                     </center>
                 </div>
-                <div class="logo-con">
-                    <img class="instLogo" src="<?php echo $base_url."uploads/".$institute[0]->institute_logo; ?>" width="80px" height="80px">
+                <div class="logo-con mt-3">
+                    <img class="instLogo" src="<?php echo $base_url."uploads/".$institute[0]->landingProfile; ?>" width="80px" height="80px">
                     <h5 class="text-capitalize"><?php echo $institute[0]->institute_name; ?></h5>
                 </div>
                 

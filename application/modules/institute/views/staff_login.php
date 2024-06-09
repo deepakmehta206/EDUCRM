@@ -322,6 +322,7 @@
   <script src="<?php echo base_url(); ?>assets/dashboard/libs/bootstrap/dist/js/bootstrap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script>
+    console.log("sdvhbdsygvtdusvg1",'<?= base_url(); ?>');
      $('.pageLoader').show();
     $('.pageLoader').fadeOut('slow');
     const inputs = ["inputOtp1", "inputOtp2", "inputOtp3", "inputOtp4", "inputOtp5", "inputOtp6"];
@@ -377,6 +378,7 @@
             $(".success-msg").html(data.message);
             setTimeout(function() {
               window.location.href = '<?= base_url(); ?>institute/leads_page';
+              // window.location.href = '<?= base_url(); ?>institute/dashboard';
             }, 4000);
           } else if (status == false) {
             $(".alert-danger").removeClass('d-none');
@@ -397,11 +399,12 @@
       $('.pageLoader').fadeIn();
       var data = $(this).serialize();
       var login = "<?= $loginType; ?>";
-      if (login == "mobile") {
-        var redirect_url = '<?= base_url(); ?>mleads';
-      } else if (login == "desktop") {
+      console.log("sdjvbdsgv",login);
+      // if (login == "mobile") {
+      //   var redirect_url = '<?= base_url(); ?>mleads';
+      // } else if (login == "desktop") {
         var redirect_url = '<?= base_url(); ?>institute/dashboard';
-      }
+      // }
       $('#inputOtp1').val('');
       $('#inputOtp2').val('');
       $('#inputOtp3').val('');
