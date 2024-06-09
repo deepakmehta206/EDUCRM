@@ -1239,7 +1239,7 @@ body {
 
 .frmBg {
 	background: rgba(168, 167, 168, 0.1);
-	border: transparent;
+	/* border: transparent; */
 	height: 44px;
 }
 
@@ -2480,7 +2480,7 @@ table.dataTable.no-footer {
 	border-bottom: 1px solid transparent !important;
 }
 
-table.dataTable thead th {
+table thead th {
 	background-color: #ebeaea
 }
 
@@ -3422,7 +3422,7 @@ table.dataTable thead th {
 }
 
 .profileMainDiv {
-	padding: 20px 15px;
+	padding: 0px 15px;
 }
 
 .width100Per {
@@ -5385,8 +5385,6 @@ input[type=submit]
     background:white;
     /* padding:10px 0; */
     border-radius:10px;
-    margin-top: 30px;
-    margin-bottom: 30px;
 }
 
 /*.action-btns i{

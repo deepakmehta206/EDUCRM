@@ -398,9 +398,10 @@
     });
 
 </script> -->
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script>
-    $('.pageLoader').show();
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script>
+   
+     $('.pageLoader').show();
     $('.pageLoader').fadeOut('slow');
     const inputs = ["inputOtp1", "inputOtp2", "inputOtp3", "inputOtp4", "inputOtp5", "inputOtp6"];
 

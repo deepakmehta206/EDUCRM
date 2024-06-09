@@ -202,10 +202,10 @@
                     <?php
                     if($_SESSION['is_institute_in'])
                     {
-                      if (@$_SESSION['institute_logo'] != "" && @$_SESSION['institute_logo'] !=Null) {
+                      if (@$_SESSION['profileImage'] != "" && @$_SESSION['profileImage'] !=Null) {
     
                       ?>
-                        <img src="<?php echo base_url().'/uploads/'.$_SESSION['institute_logo']; ?>" alt="avatar">
+                        <img src="<?php echo base_url().'/uploads/'.$_SESSION['profileImage']; ?>" alt="avatar">
                      <?php
                       }
                     }else if($_SESSION['emp_photo']){
