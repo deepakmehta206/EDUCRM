@@ -186,7 +186,7 @@
                 ?>
 
                 <li class="nav-item dropdown notice-con mr-3">
-                    <a href="javascript:void(0);" title="Assigned Tasks"> 
+                    <a href="<?=base_url(); ?>institute/notifications" title="Assigned Tasks"> 
                       <!-- <img src="<?php echo base_url(); ?>assets/dashboard/img/bellicon.png"> -->
                       <i class="bi bi-stopwatch fa-lg text-secondary"></i>
                       <!-- <div class="notice-number"><?=$total_notice; ?></div> -->
