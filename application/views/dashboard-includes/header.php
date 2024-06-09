@@ -60,8 +60,8 @@
         font-size: 12px;
         border-radius: 20px;
         position: absolute;
-        top: -10px;
-        left: 7px;
+        top: -12px;
+        left: 12px;
       }
 .one_line{
             background-color: #17639D !important;
