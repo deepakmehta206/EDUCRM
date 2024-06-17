@@ -31,6 +31,7 @@ body {
 	padding: 0;
 	margin: 0;
 	font-family: "Nunito", sans-serif;
+	overflow-x: hidden;
 	/* font-family: "McKinsey Theinhardt', 'Helvetica Neue', Calibri, Corbel, Helvetica, Roboto, Droid, sans-serif"; */
 }
 /*Jahan online application form*/
@@ -40,6 +41,67 @@ body {
 
 #LogIn-Inner{
 	width: 1200px;
+}
+
+.border-bottom-lt-blue {
+	border-bottom: 1px solid #076eba !important;
+}
+
+.chart-area {
+	width: 100%;
+    border: 1px solid #ccc;
+    padding: 12px;
+    box-sizing: border-box;
+	margin-bottom: 1rem;
+}
+
+.status-bar-area {
+	background-color: #f2f2f2;
+    margin-bottom: 1rem;
+    border: 1px solid #dadada;
+}
+
+.status-bar-area .status-highlights {
+	padding: 1rem 2rem;
+}
+
+.status-bar-area .status-highlights.gap-30 {
+	gap: 25px;
+}
+
+.text-orange {
+	color: #ffbe48 !important;
+}
+
+.status-bar-area .status-highlights .status-box {
+	padding: .4rem .8rem;
+    border-radius: 1.2rem;
+	color: #8f8f8f;
+	border: 1px solid #8f8f8f;
+}
+
+.status-bar-area .status-highlights .status-box i {
+	font-size: 1.2rem;
+}
+
+.box-success {
+	color: #1db83b !important;
+	border: 1px solid #1db83b !important;
+	background-color: #def4e2 !important;
+}
+
+@media (max-width: 1399px) {
+	.status-bar-area .status-highlights.gap-30 {
+		gap: 13px;
+	}
+
+	.status-bar-area .status-highlights .status-box i {
+		font-size: .85rem;
+	}
+
+	.status-bar-area .status-highlights .status-box {
+		font-size: .85rem;
+	}
 }
 
 @media only screen and (max-width: 1024px){
@@ -1581,7 +1643,7 @@ body {
 }
 
 .Login_Ryt_text p {
-	font-size: 18px;
+	font-size: 16px;
 	color: #000;
 	margin-bottom: 3px;
 	margin-top: 38px;
@@ -4935,7 +4997,10 @@ input[type=submit]
 }
 
 .activity-list .activity-detail{
-	position: relative;
+	/* position: relative; */
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 	width: 100%;
 	padding: 20px 15px;
 	background: #fff;
@@ -4943,11 +5008,11 @@ input[type=submit]
 	margin: 5px;
 }
 
-.activity-list .activity-detail .action-btns{
+/* .activity-list .activity-detail .action-btns{
 	position: absolute;
 	top: 4px;
 	right: 12px;
-}
+} */
 
 .activity-list .activity-detail .action-btns span{
 	margin-right: 12px;
@@ -5342,10 +5407,10 @@ input[type=submit]
 }
 
 .sidenav .nav .tab-active{
-	background: #8E294F;
+	background-color: #8E294F;
 }
 .sidenav .nav li span{
-	color: #8E294F;
+	color: #fff;
 }
 .sidenav .nav .tab-active span{
 	color: white;
@@ -5356,7 +5421,7 @@ input[type=submit]
 }
 
 .sidenav .nav .collapse li{
-	padding-left: 20px;
+	padding-left: 6px;
 }
 
 .sidenav .nav .collapse .submenu-active{

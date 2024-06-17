@@ -92,7 +92,7 @@
     border: 1px solid #ccc;
     padding: 12px;
     box-sizing: border-box;
-    margin-bottom: 7px;
+    margin-bottom: 1rem;
   }
 
   .action-btns span {
@@ -124,155 +124,400 @@
     </div>
   </div>
   <div class="page-container" id="page-container">
-    <div class="padding">
-      <div class="container">
-        <div class="student_details_box shadow-sm bg-light">
-          <div class="row my-4">
-            <input type="hidden" name="student_id" id="student_id">
-            <input type="hidden" name="yoa" id="yoa">
-            <div class="col-md-4">
-              <div class="form-group">
-                <select class="contacted_medium form-control" lead_id="<?= $lead[0]->id; ?>">
-                  <option value="">Select Status</option>
-                  <option value="Emailed" <?php if ($lead[0]->contacted_medium == "Emailed") {
-                                            echo "selected";
-                                          } ?>>Emailed</option>
-                  <option value="Prospectus Sent" <?php if ($lead[0]->contacted_medium == "Prospectus Sent") {
-                                                    echo "selected";
-                                                  } ?>>Prospectus Sent</option>
-                  <option value="Called" <?php if ($lead[0]->contacted_medium == "Called") {
-                                            echo "selected";
-                                          } ?>>Called</option>
-                  <option value="Whatsapp Done" <?php if ($lead[0]->contacted_medium == "Whatsapp Done") {
+    <div class="padding-y">
+      <div class="student_details_box shadow-sm bg-light">
+        <div class="row border-bottom mx-1">
+          <div class="col-md-12">
+            <h5>Change Lead Status</h5>
+          </div>
+        </div>
+        <div class="row align-items-center mt-3 mb-4 mx-1">
+          <input type="hidden" name="student_id" id="student_id">
+          <input type="hidden" name="yoa" id="yoa">
+          <div class="col-md-3">
+            <div class="form-group">
+              <select class="contacted_medium form-control" lead_id="<?= $lead[0]->id; ?>">
+                <option value="">Select Status</option>
+                <option value="Emailed" <?php if ($lead[0]->contacted_medium == "Emailed") {
+                                          echo "selected";
+                                        } ?>>Emailed</option>
+                <option value="Prospectus Sent" <?php if ($lead[0]->contacted_medium == "Prospectus Sent") {
                                                   echo "selected";
-                                                } ?>>Whatsapp Done</option>
-                  <option value="Documents Collected" <?php if ($lead[0]->contacted_medium == "Documents Collected") {
-                                                        echo "selected";
-                                                      } ?>>Documents Collected</option>
+                                                } ?>>Prospectus Sent</option>
+                <option value="Called" <?php if ($lead[0]->contacted_medium == "Called") {
+                                          echo "selected";
+                                        } ?>>Called</option>
+                <option value="Whatsapp Done" <?php if ($lead[0]->contacted_medium == "Whatsapp Done") {
+                                                echo "selected";
+                                              } ?>>Whatsapp Done</option>
+                <option value="Documents Collected" <?php if ($lead[0]->contacted_medium == "Documents Collected") {
+                                                      echo "selected";
+                                                    } ?>>Documents Collected</option>
 
-                  <option value="Online Application Done" <?php if ($lead[0]->contacted_medium == "Online Application Done") {
+                <option value="Online Application Done" <?php if ($lead[0]->contacted_medium == "Online Application Done") {
+                                                          echo "selected";
+                                                        } ?>>Online Application Done</option>
+
+                <option value="Offer Letter Sent" <?php if ($lead[0]->contacted_medium == "Offer Letter Sent") {
+                                                    echo "selected";
+                                                  } ?>>Offer Letter Sent</option>
+
+                <option value="Admission Fee Paid" <?php if ($lead[0]->contacted_medium == "Admission Fee Paid") {
+                                                      echo "selected";
+                                                    } ?>>Admission Fee Paid</option>
+
+                <option value="Fee Receipt Sent" <?php if ($lead[0]->contacted_medium == "Fee Receipt Sent") {
+                                                    echo "selected";
+                                                  } ?>>Fee Receipt Sent</option>
+
+                <option value="Admission Done" <?php if ($lead[0]->contacted_medium == "Admission Done") {
+                                                  echo "selected";
+                                                } ?>>Admission Done</option>
+
+                <option value="Junk Lead" <?php if ($lead[0]->contacted_medium == "Junk Lead") {
+                                            echo "selected";
+                                          } ?>>Junk Lead</option>
+
+                <option value="Invalid Number" <?php if ($lead[0]->contacted_medium == "Invalid Number") {
+                                                  echo "selected";
+                                                } ?>>Invalid Number</option>
+
+                <option value="Lost" <?php if ($lead[0]->contacted_medium == "Lost") {
+                                        echo "selected";
+                                      } ?>>Lost</option>
+
+                <option value="Lost" <?php if ($lead[0]->contacted_medium == "Duplicate") {
+                                        echo "selected";
+                                      } ?>>Duplicate</option>
+
+                <option value="Transferred to Associate" <?php if ($lead[0]->contacted_medium == "Transferred to Associate") {
                                                             echo "selected";
-                                                          } ?>>Online Application Done</option>
+                                                          } ?>>Transferred to Associate</option>
 
-                  <option value="Offer Letter Sent" <?php if ($lead[0]->contacted_medium == "Offer Letter Sent") {
-                                                      echo "selected";
-                                                    } ?>>Offer Letter Sent</option>
-
-                  <option value="Admission Fee Paid" <?php if ($lead[0]->contacted_medium == "Admission Fee Paid") {
-                                                        echo "selected";
-                                                      } ?>>Admission Fee Paid</option>
-
-                  <option value="Fee Receipt Sent" <?php if ($lead[0]->contacted_medium == "Fee Receipt Sent") {
-                                                      echo "selected";
-                                                    } ?>>Fee Receipt Sent</option>
-
-                  <option value="Admission Done" <?php if ($lead[0]->contacted_medium == "Admission Done") {
-                                                    echo "selected";
-                                                  } ?>>Admission Done</option>
-
-                  <option value="Junk Lead" <?php if ($lead[0]->contacted_medium == "Junk Lead") {
-                                              echo "selected";
-                                            } ?>>Junk Lead</option>
-
-                  <option value="Invalid Number" <?php if ($lead[0]->contacted_medium == "Invalid Number") {
-                                                    echo "selected";
-                                                  } ?>>Invalid Number</option>
-
-                  <option value="Lost" <?php if ($lead[0]->contacted_medium == "Lost") {
-                                          echo "selected";
-                                        } ?>>Lost</option>
-
-                  <option value="Lost" <?php if ($lead[0]->contacted_medium == "Duplicate") {
-                                          echo "selected";
-                                        } ?>>Duplicate</option>
-
-                  <option value="Transferred to Associate" <?php if ($lead[0]->contacted_medium == "Transferred to Associate") {
-                                                              echo "selected";
-                                                            } ?>>Transferred to Associate</option>
-
-                </select>
-              </div>
+              </select>
             </div>
-            <div class="col-md-4">
-              <div class="form-group">
-                <select class="staff_assigned form-control" lead_id="<?= $lead[0]->id; ?>">
-                  <option value="">Assign Member</option>
-                  <?php
-                  if ($_SESSION['is_institute_in']) {
-                    if (!empty($staffs))
-                      foreach ($staffs as $staff) {
-                  ?>
-                      <option value="<?= $staff->employee_id; ?>" <?php if ($staff->employee_id == $lead[0]->assign_to) {
-                                                                    echo "selected";
-                                                                  } ?> class="text-capitalize"><?= $staff->employee_name; ?></option>
-                  <?php
-                      }
-                  }
-                  ?>
+          </div>
+          <div class="col-md-3">
+            <div class="form-group">
+              <select class="staff_assigned form-control" lead_id="<?= $lead[0]->id; ?>">
+                <option value="">Assign Member</option>
+                <?php
+                if ($_SESSION['is_institute_in']) {
+                  if (!empty($staffs))
+                    foreach ($staffs as $staff) {
+                ?>
+                    <option value="<?= $staff->employee_id; ?>" <?php if ($staff->employee_id == $lead[0]->assign_to) {
+                                                                  echo "selected";
+                                                                } ?> class="text-capitalize"><?= $staff->employee_name; ?></option>
+                <?php
+                    }
+                }
+                ?>
 
-                </select>
-              </div>
+              </select>
             </div>
-            <div class="col-md-4 text-right">
-              <a href="javascript:void(0)" class="btn btn-danger delete-lead" lead_id="<?= $lead[0]->id; ?>"><i class="fa fa-trash"></i> Delete Lead</a>
-              <a href="javascript:void(0)" class="btn btn-success edit-lead" lead_id="<?= $lead[0]->id; ?>"><i class="fa fa-trash"></i> Edit Lead</a>
+          </div>
+          <div class="col-md-6 text-right">
+            <a href="javascript:void(0)" class="btn btn-danger delete-lead mb-3" lead_id="<?= $lead[0]->id; ?>"><i class="fa fa-trash"></i> Delete</a>
+            <a href="javascript:void(0)" class="btn btn-success edit-lead mb-3" lead_id="<?= $lead[0]->id; ?>"><i class="fa fa-pencil"></i> Edit</a>
+          </div>
+        </div>
+
+        <div class="row border-bottom mb-4 mx-1">
+          <div class="col-md-12">
+            <h5>Lead Status & Details</h5>
+          </div>
+        </div>
+
+        <div class="row profile-box">
+
+          <div class="col-md-12">
+            <div class="status-bar-area">
+              <div class="status-highlights row gap-30 align-items-center justify-content-center">
+                <div class="status-box col-auto box-success"><i class="bi bi-check2-circle mr-2"></i>Emailed</div>
+                <div class="status-box col-auto"><i class="bi bi-x-circle mr-2"></i>Prospectus Sent</div>
+                <div class="status-box col-auto"><i class="bi bi-x-circle mr-2"></i>Called</div>
+                <div class="status-box col-auto"><i class="bi bi-x-circle mr-2"></i>Whatsapp Done</div>
+                <div class="status-box col-auto"><i class="bi bi-x-circle mr-2"></i>Documents Collected</div>
+                <div class="status-box col-auto"><i class="bi bi-x-circle mr-2"></i>Online Application Done</div>
+                <div class="status-box col-auto"><i class="bi bi-x-circle mr-2"></i>Offer Letter Sent</div>
+                <div class="status-box col-auto"><i class="bi bi-x-circle mr-2"></i>Admission Fee Paid</div>
+                <div class="status-box col-auto"><i class="bi bi-x-circle mr-2"></i>Fee Receipt Sent</div>
+                <div class="status-box col-auto"><i class="bi bi-x-circle mr-2"></i>Admission Done</div>
+                <div class="status-box col-auto"><i class="bi bi-x-circle mr-2"></i>Junk Lead</div>
+                <div class="status-box col-auto"><i class="bi bi-x-circle mr-2"></i>Invalid Number</div>
+                <div class="status-box col-auto"><i class="bi bi-x-circle mr-2"></i>Lost</div>
+                <div class="status-box col-auto"><i class="bi bi-x-circle mr-2"></i>Duplicate</div>
+                <div class="status-box col-auto"><i class="bi bi-x-circle mr-2"></i>Transferred to Associate</div>
+              </div>
             </div>
           </div>
 
-          <div class="row profile-box">
-            <div class="col-md-5">
-              <div class="lead-info">
-                <h4 class="text-capitalize"><?= $lead[0]->student_name; ?></h4>
-                <span>Status : </span><?= $lead[0]->contacted_medium; ?>
-                <br />
-                <span>Course Interested : </span><?= $lead[0]->course; ?>
-                <br />
-                <span>Stream : </span><?= $lead[0]->stream; ?>
-                <br />
-                <span>Email Id : </span><?= substr($lead[0]->email, 0, 4) . '*******' . substr($lead[0]->email, strpos($lead[0]->email, "@")); ?>
-                <br />
-                <span>Mobile : </span><?= substr($lead[0]->mobile, 0, 3) . "****" . substr($lead[0]->mobile, 7, 4); ?>
-                <br />
-                <span>State : </span><?= $lead[0]->state; ?>
-                <br />
-                <span>City : </span><?= $lead[0]->city; ?>
-                <br />
+          <div class="col-md-7">
+            <div class="chart-area">
+              <div class="row border-bottom">
+                <div class="col-md-12">
+                  <h5>Score Meter</h5>
+                </div>
+              </div>
+              <figure class="highcharts-figure mb-0">
+                <div id="meterChart"></div>
+              </figure>
+            </div>
+            <div class="lead-tabs">
 
-                <div class="action-btns">
-                  <span class="badge badge-success"><a href="javascript:void(0)" class="text-white activity" lead_id="<?= $lead[0]->id; ?>" message="Whatsapp Initiated" data-toggle="modal" data-target="#templateModal"><i class="fa fa-whatsapp"></i> Whatsapp</a></span>
-                  <span class="badge badge-info"><a href="javascript:void(0)" onclick="makecall('<?= $lead[0]->mobile; ?>')" message="Call Done" class="text-white activity"><i class="fa fa-phone"></i> Call</a></span>
-                  <span class="badge badge-danger"><a href="mailto:<?= '+91' . $lead[0]->email; ?>" message="Email Sent" lead_id="<?= $lead[0]->id; ?>" class="text-white activity"><i class="fa fa-envelope"></i> Email</a></span>
-                  <span class="badge badge-primary"><a href="" lead_id="<?= $lead[0]->id; ?>" message="SMS Sent" class="text-white activity"><i class="fa fa-comment"></i> SMS</a></span>
+              <!-- Tab links -->
+              <div class="tab">
+                <button class="tablinks active" onclick="openCity(event, 'activity')">Activity</button>
+                <button class="tablinks" onclick="openCity(event, 'comments')">Comments</button>
+                <button class="tablinks" onclick="openCity(event, 'reminder')">Reminders</button>
+                <button class="tablinks" onclick="openCity(event, 'academics')">Academics</button>
+              </div>
+
+              <!-- Tab content -->
+              <div id="activity" class="tabcontent" style="display:block">
+                <!--<form id="activity-form">-->
+                <!--  <label>Add Activity</label>-->
+                <!--  <textarea class="form-control lead_activity" name="activity"></textarea>-->
+                <!--  <div class="submit-con my-2">-->
+                <!--    <input type="hidden" value="<?= $lead[0]->id; ?>" class="lead_id" name="lead_id" />-->
+                <!--    <button type="submit" class="btn btn-primary">Save</button>-->
+                <!--  </div>-->
+                <!--  <span class="text-success activity-success"></span>-->
+                <!--  <span class="text-danger activity-error"></span>-->
+                <!--</form>-->
+
+                <div class="activity-list records">
+                  <?php
+
+                  if (!empty($activities)) {
+                    foreach ($activities as $key => $a) {
+                  ?>
+                      <div class="activity-detail">
+
+                        <span class="comment-text">
+                          <?= $a->activity; ?>
+                        </span>
+                        <div class="action-btns">
+                          <span><i class="bi bi-calendar3-week fa-lg mr-2"></i><?= date('d-M-Y', strtotime($a->created_at)) ?></span>
+                          <span><i class="bi bi-clock fa-lg mr-2"></i><?= date('H:i A', strtotime($a->created_at)) ?></span>
+                        </div>
+
+                      </div>
+                  <?php
+                    }
+                  }
+                  ?>
+
                 </div>
               </div>
 
-              <div class="lead-details">
-                <h4>Lead Details</h4>
-                <span class="text-success leadUpdate-success"></span>
-                <span class="text-danger leadUpdate-error"></span>
-                <br />
+              <div id="comments" class="tabcontent">
+
+                <form id="comment-form">
+                  <label>Student Comment</label>
+                  <textarea class="form-control lead_comment" name="comment"></textarea>
+                  <div class="submit-con my-2">
+                    <input type="hidden" value="<?= $lead[0]->id; ?>" class="lead_id" name="lead_id" />
+                    <button type="submit" class="btn btn-primary">Save</button>
+                  </div>
+                  <span class="text-success comment-success"></span>
+                  <span class="text-danger comment-error"></span>
+                </form>
+
+                <div class="comments-list records">
+                  <?php
+                  if (!empty($comments)) {
+                    foreach ($comments as $key => $c) {
+                  ?>
+                      <div class="comment-detail">
+
+                        <div class="action-btns">
+                          <span><?= date('d-M-Y H:i A', strtotime($c->created_at)) ?></span>
+                          <i class="fa fa-trash delete-btn text-danger" type="comment" act_id="<?= $c->comment_id ?>"></i>
+                        </div>
+
+                        <span class="comment-text">
+                          <?= $c->comment; ?>
+                        </span>
+                      </div>
+                  <?php
+                    }
+                  }
+                  ?>
+
+                </div>
+
+              </div>
+
+              <div id="reminder" class="tabcontent">
+                <form id="reminder-form">
+                  <div class="form-group">
+                    <label>Reminder</label>
+                    <textarea class="form-control reminder_content" name="reminder_content"></textarea>
+                  </div>
+
+                  <div class="row">
+                    <div class="form-group col-md-6">
+                      <label>Date</label>
+                      <input type="date" class="form-control reminder_date" name="reminder_date" />
+                    </div>
+                    <div class="form-group col-md-6">
+                      <label>Time</label>
+                      <input type="time" class="form-control reminder_time" name="reminder_time" />
+                    </div>
+                  </div>
+
+                  <div class="submit-con my-2">
+                    <input type="hidden" value="<?= $lead[0]->id; ?>" class="lead_id" name="lead_id" />
+                    <button type="submit" class="btn btn-primary">Save</button>
+                  </div>
+                  <span class="text-success reminder-success"></span>
+                  <span class="text-danger reminder-error"></span>
+                </form>
+
+                <div class="reminder-list records">
+                  <?php
+                  if (!empty($reminders)) {
+                    foreach ($reminders as $key => $r) {
+                  ?>
+                      <div class="comment-detail">
+
+                        <div class="action-btns">
+                          <span><?= date('d-M-Y', strtotime($r->reminder_date)); ?></span> <span><?= date('H:i A', strtotime($r->reminder_time)); ?></span>
+                          <i class="fa fa-trash delete-btn text-danger" type="reminder" act_id="<?= $r->reminder_id ?>"></i>
+                        </div>
+
+                        <span class="comment-text">
+                          <?= $r->reminder_content; ?>
+                        </span>
+                      </div>
+                  <?php
+                    }
+                  }
+                  ?>
+
+                </div>
+
+              </div>
+
+              <div id="academics" class="tabcontent">
+                <form id="academic-form">
+                  <div class="form-group">
+                    <label>Academic Details</label>
+                    <textarea class="form-control academic_content" name="academic_content"></textarea>
+                  </div>
+
+                  <div class="submit-con my-2">
+                    <input type="hidden" value="<?= $lead[0]->id; ?>" class="lead_id" name="lead_id" />
+                    <button type="submit" class="btn btn-primary">Save</button>
+                  </div>
+                  <span class="text-success academic-success"></span>
+                  <span class="text-danger academic-error"></span>
+                </form>
+
+                <div class="comments-list records">
+                  <?php
+                  if (!empty($academics)) {
+                    foreach ($academics as $key => $a) {
+                  ?>
+                      <div class="academic-detail">
+
+                        <div class="action-btns">
+                          <i class="fa fa-trash delete-btn text-danger" type="academic" act_id="<?= $a->academic_id ?>"></i>
+                        </div>
+
+                        <span class="academic-text">
+                          <?= $a->academic_content; ?>
+                        </span>
+                      </div>
+                  <?php
+                    }
+                  }
+                  ?>
+                </div>
+
+              </div>
+
+            </div>
+            <!--<a href="javascript:void(0)" onclick="hangcall('<?= $lead[0]->mobile; ?>')" class="btn btn-danger"><i class="fa fa-phone"></i> Call Hang Up</a>-->
+
+          </div>
+
+          <div class="col-md-5">
+            <div class="lead-info">
+              <div class="row border-bottom mb-3">
+                <div class="col-md-12">
+                  <h4>Lead Details</h4>
+                </div>
+              </div>
+              <h4 class="text-capitalize text-orange"><?= $lead[0]->student_name; ?></h4>
+              <div class="mb-2">
+                <span><i class="bi bi-check2-circle fa-lg mr-2"></i>Status : </span><?= $lead[0]->contacted_medium; ?>
+              </div>
+              <div class="mb-2">
+                <span><i class="bi bi-book fa-lg mr-2"></i>Course Interested : </span><?= $lead[0]->course; ?>
+              </div>
+              <div class="mb-2">
+                <span><i class="bi bi-award fa-lg mr-2"></i>Stream : </span><?= $lead[0]->stream; ?>
+              </div>
+              <div class="mb-2">
+                <span><i class="bi bi-envelope fa-lg mr-2"></i>Email Id : </span><?= substr($lead[0]->email, 0, 4) . '*******' . substr($lead[0]->email, strpos($lead[0]->email, "@")); ?>
+              </div>
+              <div class="mb-2">
+                <span><i class="bi bi-phone fa-lg mr-2"></i>Mobile : </span><?= substr($lead[0]->mobile, 0, 3) . "****" . substr($lead[0]->mobile, 7, 4); ?>
+              </div>
+              <div class="mb-2">
+                <span><i class="bi bi-pin-map fa-lg mr-2"></i>State : </span><?= $lead[0]->state; ?>
+              </div>
+              <div class="mb-2">
+                <span><i class="bi bi-geo-alt fa-lg mr-2"></i>City : </span><?= $lead[0]->city; ?>
+              </div>
+
+              <div class="action-btns">
+                <span class="badge badge-success"><a href="javascript:void(0)" class="text-white activity" lead_id="<?= $lead[0]->id; ?>" message="Whatsapp Initiated" data-toggle="modal" data-target="#templateModal"><i class="fa fa-whatsapp"></i> Whatsapp</a></span>
+                <span class="badge badge-info"><a href="javascript:void(0)" onclick="makecall('<?= $lead[0]->mobile; ?>')" message="Call Done" class="text-white activity"><i class="fa fa-phone"></i> Call</a></span>
+                <span class="badge badge-danger"><a href="mailto:<?= '+91' . $lead[0]->email; ?>" message="Email Sent" lead_id="<?= $lead[0]->id; ?>" class="text-white activity"><i class="fa fa-envelope"></i> Email</a></span>
+                <span class="badge badge-primary"><a href="" lead_id="<?= $lead[0]->id; ?>" message="SMS Sent" class="text-white activity"><i class="fa fa-comment"></i> SMS</a></span>
+              </div>
+            </div>
+
+            <div class="lead-details">
+              <div class="row border-bottom">
+                <div class="col-md-12">
+                  <h4>Lead Activities</h4>
+                </div>
+              </div>
+              <span class="text-success leadUpdate-success"></span>
+              <span class="text-danger leadUpdate-error"></span>
+
+              <div class="mt-3 mb-1">
                 <span>Lead Type : </span>
 
                 <input type="radio" class='lead_type' name="lead_type" value="Hot" lead_id="<?= $lead[0]->id; ?>" <?php if ($lead[0]->lead_type == "Hot") {
                                                                                                                     echo 'checked';
-                                                                                                                  } ?> />Hot
+                                                                                                                  } ?> /> Hot
                 <input type="radio" class='lead_type' name="lead_type" value="Warm" lead_id="<?= $lead[0]->id; ?>" <?php if ($lead[0]->lead_type == "Warm") {
-                                                                                                                    echo 'checked';
-                                                                                                                  } ?> />Warm
+                                                                                                                      echo 'checked';
+                                                                                                                    } ?> /> Warm
                 <input type="radio" class='lead_type' name="lead_type" value="Cold" lead_id="<?= $lead[0]->id; ?>" <?php if ($lead[0]->lead_type == "Cold") {
-                                                                                                                    echo 'checked';
-                                                                                                                  } ?> />Cold
-                <br />
+                                                                                                                      echo 'checked';
+                                                                                                                    } ?> /> Cold
+              </div>
+              <div class="mb-1">
                 <span>Lead Status : </span><?= $lead[0]->contacted_medium; ?>
-                <br />
+              </div>
 
+              <div class="mb-1">
                 <span>Last Update Date : </span>
                 <?php
                 if (!empty($lead[0]->updated_at)) {
                   echo date('d-M-Y H:i A', strtotime($lead[0]->updated_at));
                 }
                 ?>
-                <br />
+              </div>
+
+              <div class="mb-1">
                 <span>
                   Age of Lead :
                 </span>
@@ -282,209 +527,30 @@
                 $datediff = ($curr_date - $lead_date);
                 echo $datediff . ' Day(s)';
                 ?>
-                <br />
+              </div>
+
+              <div class="mb-1">
                 <span class="sources">
                   Lead Source:
                 </span>
 
                 <input type="radio" name="lead_src" class='lead_sources' value="Facebook" lead_id="<?= $lead[0]->id; ?>" <?php if ($lead[0]->lead_src == "Facebook") {
-                                                                                                                          echo 'checked';
-                                                                                                                        } ?> />Facebook
+                                                                                                                            echo 'checked';
+                                                                                                                          } ?> /> Facebook
                 <input type="radio" class='lead_sources' name="lead_src" value="Google" lead_id="<?= $lead[0]->id; ?>" <?php if ($lead[0]->lead_src == "Google") {
-                                                                                                                        echo 'checked';
-                                                                                                                      } ?> />Google
-                <input type="radio" class='lead_sources' name="lead_src" value="Linkedin" lead_id="<?= $lead[0]->id; ?>" <?php if ($lead[0]->lead_src == "Linkedin") {
                                                                                                                           echo 'checked';
-                                                                                                                        } ?> />Linkedin
-                <br />
-
+                                                                                                                        } ?> /> Google
+                <input type="radio" class='lead_sources' name="lead_src" value="Linkedin" lead_id="<?= $lead[0]->id; ?>" <?php if ($lead[0]->lead_src == "Linkedin") {
+                                                                                                                            echo 'checked';
+                                                                                                                          } ?> /> Linkedin
               </div>
-
-            </div>
-            <div class="col-md-7">
-              <div class="lead-tabs">
-
-                <!-- Tab links -->
-                <div class="tab">
-                  <button class="tablinks active" onclick="openCity(event, 'activity')">Activity</button>
-                  <button class="tablinks" onclick="openCity(event, 'comments')">Comments</button>
-                  <button class="tablinks" onclick="openCity(event, 'reminder')">Reminders</button>
-                  <button class="tablinks" onclick="openCity(event, 'academics')">Academics</button>
-                </div>
-
-                <!-- Tab content -->
-                <div id="activity" class="tabcontent" style="display:block">
-                  <!--<form id="activity-form">-->
-                  <!--  <label>Add Activity</label>-->
-                  <!--  <textarea class="form-control lead_activity" name="activity"></textarea>-->
-                  <!--  <div class="submit-con my-2">-->
-                  <!--    <input type="hidden" value="<?= $lead[0]->id; ?>" class="lead_id" name="lead_id" />-->
-                  <!--    <button type="submit" class="btn btn-primary">Save</button>-->
-                  <!--  </div>-->
-                  <!--  <span class="text-success activity-success"></span>-->
-                  <!--  <span class="text-danger activity-error"></span>-->
-                  <!--</form>-->
-
-                  <div class="activity-list records">
-                    <?php
-
-                    if (!empty($activities)) {
-                      foreach ($activities as $key => $a) {
-                    ?>
-                        <div class="activity-detail">
-
-                          <div class="action-btns">
-                            <span><?= date('d-M-Y H:i A', strtotime($a->created_at)) ?></span>
-                            <!--<i class="fa fa-trash delete-btn text-danger" type="activity" act_id="<?= $a->activity_id ?>"></i>-->
-                          </div>
-
-                          <span class="comment-text">
-                            <?= $a->activity; ?>
-                          </span>
-                        </div>
-                    <?php
-                      }
-                    }
-                    ?>
-
-                  </div>
-                </div>
-
-                <div id="comments" class="tabcontent">
-
-                  <form id="comment-form">
-                    <label>Student Comment</label>
-                    <textarea class="form-control lead_comment" name="comment"></textarea>
-                    <div class="submit-con my-2">
-                      <input type="hidden" value="<?= $lead[0]->id; ?>" class="lead_id" name="lead_id" />
-                      <button type="submit" class="btn btn-primary">Save</button>
-                    </div>
-                    <span class="text-success comment-success"></span>
-                    <span class="text-danger comment-error"></span>
-                  </form>
-
-                  <div class="comments-list records">
-                    <?php
-                    if (!empty($comments)) {
-                      foreach ($comments as $key => $c) {
-                    ?>
-                        <div class="comment-detail">
-
-                          <div class="action-btns">
-                            <span><?= date('d-M-Y H:i A', strtotime($c->created_at)) ?></span>
-                            <i class="fa fa-trash delete-btn text-danger" type="comment" act_id="<?= $c->comment_id ?>"></i>
-                          </div>
-
-                          <span class="comment-text">
-                            <?= $c->comment; ?>
-                          </span>
-                        </div>
-                    <?php
-                      }
-                    }
-                    ?>
-
-                  </div>
-
-                </div>
-
-                <div id="reminder" class="tabcontent">
-                  <form id="reminder-form">
-                    <div class="form-group">
-                      <label>Reminder</label>
-                      <textarea class="form-control reminder_content" name="reminder_content"></textarea>
-                    </div>
-
-                    <div class="row">
-                      <div class="form-group col-md-6">
-                        <label>Date</label>
-                        <input type="date" class="form-control reminder_date" name="reminder_date" />
-                      </div>
-                      <div class="form-group col-md-6">
-                        <label>Time</label>
-                        <input type="time" class="form-control reminder_time" name="reminder_time" />
-                      </div>
-                    </div>
-
-                    <div class="submit-con my-2">
-                      <input type="hidden" value="<?= $lead[0]->id; ?>" class="lead_id" name="lead_id" />
-                      <button type="submit" class="btn btn-primary">Save</button>
-                    </div>
-                    <span class="text-success reminder-success"></span>
-                    <span class="text-danger reminder-error"></span>
-                  </form>
-
-                  <div class="reminder-list records">
-                    <?php
-                    if (!empty($reminders)) {
-                      foreach ($reminders as $key => $r) {
-                    ?>
-                        <div class="comment-detail">
-
-                          <div class="action-btns">
-                            <span><?= date('d-M-Y', strtotime($r->reminder_date)); ?></span> <span><?= date('H:i A', strtotime($r->reminder_time)); ?></span>
-                            <i class="fa fa-trash delete-btn text-danger" type="reminder" act_id="<?= $r->reminder_id ?>"></i>
-                          </div>
-
-                          <span class="comment-text">
-                            <?= $r->reminder_content; ?>
-                          </span>
-                        </div>
-                    <?php
-                      }
-                    }
-                    ?>
-
-                  </div>
-
-                </div>
-
-                <div id="academics" class="tabcontent">
-                  <form id="academic-form">
-                    <div class="form-group">
-                      <label>Academic Details</label>
-                      <textarea class="form-control academic_content" name="academic_content"></textarea>
-                    </div>
-
-                    <div class="submit-con my-2">
-                      <input type="hidden" value="<?= $lead[0]->id; ?>" class="lead_id" name="lead_id" />
-                      <button type="submit" class="btn btn-primary">Save</button>
-                    </div>
-                    <span class="text-success academic-success"></span>
-                    <span class="text-danger academic-error"></span>
-                  </form>
-
-                  <div class="comments-list records">
-                    <?php
-                    if (!empty($academics)) {
-                      foreach ($academics as $key => $a) {
-                    ?>
-                        <div class="academic-detail">
-
-                          <div class="action-btns">
-                            <i class="fa fa-trash delete-btn text-danger" type="academic" act_id="<?= $a->academic_id ?>"></i>
-                          </div>
-
-                          <span class="academic-text">
-                            <?= $a->academic_content; ?>
-                          </span>
-                        </div>
-                    <?php
-                      }
-                    }
-                    ?>
-                  </div>
-
-                </div>
-
-              </div>
-              <!--<a href="javascript:void(0)" onclick="hangcall('<?= $lead[0]->mobile; ?>')" class="btn btn-danger"><i class="fa fa-phone"></i> Call Hang Up</a>-->
 
             </div>
 
           </div>
-        </div>
+          
 
+        </div>
       </div>
 
     </div>
@@ -1621,5 +1687,131 @@
 
     });
 
+  }
+</script>
+
+<script>
+  function scoreMeter() {
+    Highcharts.chart('meterChart', {
+
+      chart: {
+        type: 'gauge',
+        backgroundColor: 'transparent',
+        plotShadow: false,
+        height: '40%',
+        spacingTop: 0,
+        spacingRight: 0,
+        spacingBottom: 0,
+        spacingLeft: 0,
+        plotBorderWidth: 0,
+        marginRight: 0, //-60, //this does move the chart but you'll need to recompute it
+        marginLeft: 0, //-60,  //whenever the page changes width
+        marginTop: 0,
+        marginBottom: 0
+      },
+
+      title: {
+        text: ''
+      },
+
+      credits: {
+        enabled: false
+      },
+
+      pane: {
+        startAngle: -90,
+        endAngle: 89.9,
+        background: null,
+        center: ['50%', '75%'],
+        size: '110%'
+      },
+
+      // the value axis
+      yAxis: {
+        min: 0,
+        max: 200,
+        tickPixelInterval: 72,
+        tickPosition: 'inside',
+        tickColor: Highcharts.defaultOptions.chart.backgroundColor || '#FFFFFF',
+        tickLength: 20,
+        tickWidth: 2,
+        minorTickInterval: null,
+        labels: {
+          distance: 20,
+          style: {
+            fontSize: '14px'
+          }
+        },
+        lineWidth: 0,
+        plotBands: [{
+          from: 0,
+          to: 130,
+          color: '#55BF3B', // green
+          thickness: 20,
+          borderRadius: '50%'
+        }, {
+          from: 150,
+          to: 200,
+          color: '#DF5353', // red
+          thickness: 20,
+          borderRadius: '50%'
+        }, {
+          from: 120,
+          to: 160,
+          color: '#DDDF0D', // yellow
+          thickness: 20
+        }]
+      },
+
+      series: [{
+        name: 'Score',
+        data: [80],
+        tooltip: {
+          valueSuffix: ' Marks'
+        },
+        dataLabels: {
+          format: '{y} Marks',
+          borderWidth: 0,
+          color: (
+            Highcharts.defaultOptions.title &&
+            Highcharts.defaultOptions.title.style &&
+            Highcharts.defaultOptions.title.style.color
+          ) || '#333333',
+          style: {
+            fontSize: '16px'
+          }
+        },
+        dial: {
+          radius: '80%',
+          backgroundColor: 'gray',
+          baseWidth: 12,
+          baseLength: '0%',
+          rearLength: '0%'
+        },
+        pivot: {
+          backgroundColor: 'gray',
+          radius: 6
+        }
+
+      }]
+
+    });
+
+    // Add some life
+    setInterval(() => {
+      const chart = Highcharts.charts[0];
+      if (chart && !chart.renderer.forExport) {
+        const point = chart.series[0].points[0],
+          inc = Math.round((Math.random() - 0.5) * 20);
+
+        let newVal = point.y + inc;
+        if (newVal < 0 || newVal > 200) {
+          newVal = point.y - inc;
+        }
+
+        point.update(newVal);
+      }
+
+    }, 3000);
   }
 </script>

@@ -22,12 +22,12 @@
       <link rel="stylesheet" href="<?php echo base_url(); ?>assets/bower-components/jquery-nice-select/css/nice-select.css">
       <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/dashboard/libs/line-awesome/line-awesome/css/line-awesome.min.css">
       <link rel="stylesheet" href="<?php echo base_url(); ?>assets/vanilla-notify/vanilla-notify.css" type="text/css" />
-     
-      <script src="https://code.highcharts.com/highcharts.js"></script>
       <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
 
       <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
       <script src="<?php echo base_url(); ?>assets/dashboard/libs/jquery/dist/jquery.min.js"></script>
       
@@ -60,8 +60,8 @@
         font-size: 12px;
         border-radius: 20px;
         position: absolute;
-        top: -10px;
-        left: 7px;
+        top: -12px;
+        left: 12px;
       }
 .one_line{
             background-color: #17639D !important;
@@ -75,7 +75,7 @@
    </head>
   
    <body class="layout-column">
-       <div class="one_line"></div>
+       <div class="one_line d-none"></div>
     <header id="header" class="page-header bg-white box-shadows animate fadeInDown sticky" data-class="bg-white">
          <div class="navbar navbar-expand-lg">
             <!-- btn to toggle sidenav on small screen -->
@@ -157,8 +157,9 @@
                 $total_notice = count($notices);
                ?>
                 <li class="nav-item dropdown notice-con mr-3">
-                    <a href="<?=base_url(); ?>institute/notifications"> 
-                     <img src="<?php echo base_url(); ?>assets/dashboard/img/bellicon.png">
+                    <a href="<?=base_url(); ?>institute/notifications" title="Notifications"> 
+                     <!-- <img src="<?php echo base_url(); ?>assets/dashboard/img/bellicon.png"> -->
+                      <i class="bi bi-bell fa-lg text-secondary"></i>
                      <div class="notice-number"><?=$total_notice; ?></div>
                     </a>
                 </li>
@@ -181,8 +182,9 @@
                    $total_notice = count($notices);
                    ?>
                     <li class="nav-item dropdown notice-con mr-3">
-                        <a href="<?=base_url(); ?>institute/notifications"> 
-                         <img src="<?php echo base_url(); ?>assets/dashboard/img/bellicon.png">
+                        <a href="<?=base_url(); ?>institute/notifications" title="Notifications"> 
+                         <!-- <img src="<?php echo base_url(); ?>assets/dashboard/img/bellicon.png"> -->
+                         <i class="bi bi-bell fa-lg text-secondary"></i>
                          <div class="notice-number"><?=$total_notice; ?></div>
                         </a>
                     </li>
@@ -195,6 +197,15 @@
                     <?php
                     } 
                 ?>
+
+                <li class="nav-item dropdown notice-con mr-3">
+                    <a href="<?=base_url(); ?>institute/notifications" title="Assigned Tasks"> 
+                      <!-- <img src="<?php echo base_url(); ?>assets/dashboard/img/bellicon.png"> -->
+                      <i class="bi bi-stopwatch fa-lg text-secondary"></i>
+                      <!-- <div class="notice-number"><?=$total_notice; ?></div> -->
+                      <div class="notice-number">3</div>
+                    </a>
+                </li>
 
                 <li class="nav-item dropdown">
                   <a href="javascript:void(0);" data-toggle="dropdown" class="nav-link customDropDown d-flex align-items-center py-0 px-lg-0 px-2 text-color" aria-expanded="false">
