@@ -162,6 +162,13 @@
                      <div class="notice-number"><?=$total_notice; ?></div>
                     </a>
                 </li>
+                <li class="nav-item dropdown notice-con mr-3">
+                    <a href="<?=base_url(); ?>institute/notifications"> 
+                    <i class="fa fa-tasks" style="font-size:20px;"></i>
+                     <!-- <img src="<?php echo base_url(); ?>assets/dashboard/img/bellicon.png"> -->
+                     <div class="notice-number"><?=$total_notice; ?></div>
+                    </a>
+                </li>
                 <?php
                 } 
                 ?>
@@ -173,6 +180,12 @@
                     $notices = $this->db->query("SELECT * FROM notifications WHERE staff_id = '".$emp_id."' AND status = '0' ")->result();
                    $total_notice = count($notices);
                    ?>
+                    <li class="nav-item dropdown notice-con mr-3">
+                        <a href="<?=base_url(); ?>institute/notifications"> 
+                         <img src="<?php echo base_url(); ?>assets/dashboard/img/bellicon.png">
+                         <div class="notice-number"><?=$total_notice; ?></div>
+                        </a>
+                    </li>
                     <li class="nav-item dropdown notice-con mr-3">
                         <a href="<?=base_url(); ?>institute/notifications"> 
                          <img src="<?php echo base_url(); ?>assets/dashboard/img/bellicon.png">
