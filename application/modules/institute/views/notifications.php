@@ -98,121 +98,129 @@
     <div class="title-header">
         <div class="">
             <span>
-                <h3 class="mb-0 pull-left" style="color:white"><i class="fa fa-check-square-o"></i> Notifications</h3>
+                <h3 class="mb-0 pull-left" style="color:white"><i class="fa fa-check-square-o"></i> <?= $menu; ?></h3>
             </span>
         </div>
     </div>
 
     <div class="page-container" id="page-container">
 
-        <div class="padding">
-            <div class="card">
-                <div class="card-header">
-                    <h5>Enquiry</h5>
-                </div>
-                <div class="card-body">
-                    <div class="table-responsive">
-                        <table class="table table-bordered">
-                            <thead>
-                                <tr>
-                                    <th class="text-center">SL#</th>
-                                    <th class="text-center">Notification</th>
-                                    <th class="text-center">Date</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <?php
-                                if (!empty($notifications)) {
-                                    foreach ($notifications as $key => $notice) {
-                                ?>
-                                        <tr>
-
-                                            <td class="text-center"><?= ($key + 1); ?></td>
-                                            <td class="text-center"><?php echo $notice->msg ?></td>
-                                            <td class="text-center"><?php echo date('d-M-Y', strtotime($notice->created_at)) ?></td>
-
-
-                                        </tr>
-                                    <?php
-                                    }
-                                } else { ?>
+        <?php if ($type == 1) { ?>
+            <div class="padding">
+                <div class="card">
+                    <div class="card-header">
+                        <h5>Enquiry</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-bordered">
+                                <thead>
                                     <tr>
-                                        <td colspan="3" class="text-center">No Notification Found !</td>
+                                        <th class="text-center">SL#</th>
+                                        <th class="text-center">Notification</th>
+                                        <th class="text-center">Date</th>
                                     </tr>
+                                </thead>
+                                <tbody>
+                                    <?php
+                                    if (!empty($notifications)) {
+                                        foreach ($notifications as $key => $notice) {
+                                    ?>
+                                            <tr>
 
-                                <?php }
-                                ?>
-                            </tbody>
-                        </table>
+                                                <td class="text-center"><?= ($key + 1); ?></td>
+                                                <td class="text-center"><?php echo $notice->msg ?></td>
+                                                <td class="text-center"><?php echo date('d-M-Y', strtotime($notice->created_at)) ?></td>
+
+
+                                            </tr>
+                                        <?php
+                                        }
+                                    } else { ?>
+                                        <tr>
+                                            <td colspan="3" class="text-center">No Notification Found !</td>
+                                        </tr>
+
+                                    <?php }
+                                    ?>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="padding">
-            <div class="card">
-                <div class="card-header">
-                    <h5>Task Reminders</h5>
-                </div>
-                <div class="card-body">
-                    <div class="table-responsive">
-                        <table class="table table-bordered">
-                            <thead>
-                                <tr>
-                                    <th class="text-center">SL#</th>
-                                    <th class="text-center">Taks</th>
-                                    <th class="text-center">Assigned Date</th>
-                                    <th class="text-center">Assigned Time</th>
-                                    <th class="text-center">Status</th>
-                                    <th class="text-center">Action</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <?php
-                                if (!empty($reminder)) {
-                                    foreach ($reminder as $key => $re) {
-                                ?>
-                                        <tr>
-
-                                            <td class="text-center"><?= ($key + 1); ?></td>
-                                            <td class="text-center"><?= $re->reminder_content ?></td>
-                                            <td class="text-center"><?php echo date('d-M-Y', strtotime($re->reminder_date)) ?></td>
-                                            <td class="text-center"><?php echo date('H:i A', strtotime($re->reminder_time)) ?></td>
-                                            <td class="text-center"><?php
-                                                                    if ($re->statusId == 0) {
-                                                                        echo '<P class="text-danger">Pending</p>';
-                                                                    } elseif ($re->statusId == 1) {
-                                                                        echo '<P class="text-info">In-progress</p>';
-                                                                    } elseif ($re->statusId == 2) {
-                                                                        echo '<P class="text-warning">In-Hold</p>';
-                                                                    } elseif ($re->statusId == 3) {
-                                                                        echo '<P class="text-success">Completed</p>';
-                                                                    }
-
-                                                                    ?></td>
-                                            <td class="text-center">
-                                                <a href="javascript:void(0)" onclick="showModalBtn(<?php echo $re->reminder_id; ?>)">
-                                                    <i class="fa fa-pencil"></i>
-                                                </a>
-
-                                            </td>
-
-
-                                        </tr>
-                                    <?php
-                                    }
-                                } else { ?>
+        <?php } ?>
+        <?php if ($type == 2) { ?>
+            <div class="padding">
+                <div class="card">
+                    <div class="card-header">
+                        <h5>Task Reminders</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-bordered">
+                                <thead>
                                     <tr>
-                                        <td colspan="7" class="text-center">No Task Reminder Found !</td>
+                                        <th class="text-center">SL#</th>
+                                        <th class="text-center">Lead Name</th>
+                                        <th class="text-center">Institute Name</th>
+                                        <th class="text-center">Taks</th>
+                                        <th class="text-center">Assigned Date</th>
+                                        <th class="text-center">Assigned Time</th>
+                                        <th class="text-center">Status</th>
+                                        <th class="text-center">Action</th>
                                     </tr>
+                                </thead>
+                                <tbody>
+                                    <?php
+                                    if (!empty($reminder)) {
+                                        foreach ($reminder as $key => $re) {
+                                    ?>
+                                            <tr>
 
-                                <?php }
-                                ?>
-                            </tbody>
-                        </table>
+                                                <td class="text-center"><?= ($key + 1); ?></td>
+                                                <td class="text-center"><?= $re->student_name ?></td>
+                                                <td class="text-center"><?= $re->institute_name ?></td>
+                                                <td class="text-center"><?= $re->reminder_content ?></td>
+                                                <td class="text-center"><?php echo date('d-M-Y', strtotime($re->reminder_date)) ?></td>
+                                                <td class="text-center"><?php echo date('H:i A', strtotime($re->reminder_time)) ?></td>
+                                                <td class="text-center"><?php
+                                                                        if ($re->statusId == 0) {
+                                                                            echo '<P class="text-danger">Pending</p>';
+                                                                        } elseif ($re->statusId == 1) {
+                                                                            echo '<P class="text-info">In-progress</p>';
+                                                                        } elseif ($re->statusId == 2) {
+                                                                            echo '<P class="text-warning">In-Hold</p>';
+                                                                        } elseif ($re->statusId == 3) {
+                                                                            echo '<P class="text-success">Completed</p>';
+                                                                        }
+
+                                                                        ?></td>
+                                                <td class="text-center">
+                                                    <a href="javascript:void(0)" onclick="showModalBtn(<?php echo $re->reminder_id; ?>)">
+                                                        <i class="fa fa-pencil"></i>
+                                                    </a>
+
+                                                </td>
+
+
+                                            </tr>
+                                        <?php
+                                        }
+                                    } else { ?>
+                                        <tr>
+                                            <td colspan="7" class="text-center">No Task Reminder Found !</td>
+                                        </tr>
+
+                                    <?php }
+                                    ?>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+        <?php } ?>
     </div>
 </div>
 <div class="modal fade" tabindex="-1" role="dialog" id="myModal">

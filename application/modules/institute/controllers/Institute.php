@@ -3330,6 +3330,7 @@ class Institute extends CI_Controller
         $emp_id = $_SESSION['employee_id'];
         $data['leads'] = $this->db->query("SELECT * FROM leads WHERE assign_to = '" . $emp_id . "' ORDER BY id DESC  ")->result();
       }
+      // $this->dd($data['leads']);
       $data['importleads'] = $this->institute_model->getAllImportLeads($institute_id);
       $data['site_title'] = "EDUWEGO | Leads";
       $data['menu'] = 'leads';
@@ -4677,6 +4678,62 @@ class Institute extends CI_Controller
       redirect($br . "associate", "refresh");
     }
   }
+
+  public function tasks(){
+    $institute_id = $_SESSION['institute_id'];
+    $employee_id = $_SESSION['employee_id'];
+    $update_data = array(
+      'status' => '1',
+    );
+    $where = array('status' => '0','employee_id'=>$employee_id);
+    $this->institute_model->updateAllData('lead_reminder', $where, $update_data);
+    $data['notifications'] = [];
+    // $this->db;
+    // $this->db;
+    // $this->db;
+    $dataReminder = $this->db->select('lead_reminder.*, leads.*, institute.*')
+    ->from('lead_reminder')
+    ->join('leads', 'lead_reminder.lead_id = leads.id', 'left')
+    ->join('institute', 'lead_reminder.institute_id = institute.institute_id', 'left')
+    ->where('lead_reminder.institute_id', $institute_id)
+    ->where('lead_reminder.employee_id', $employee_id)
+    ->where('lead_reminder.reminder_date <=', date('Y-m-d'))
+    ->where('lead_reminder.reminder_time <=', date('H:i:s'))
+    ->order_by('lead_reminder.created_at', "DESC")
+    ->get();
+    $data['reminder'] =  $dataReminder->result();
+    $data['site_title'] = "ZEQOON | Notifications";
+    $data['menu'] = 'Tasks';
+    $data['type'] = 2;
+    $this->load->view('dashboard-includes/header', $data);
+    $this->load->view('dashboard-includes/left-sidebar');
+    $this->load->view('notifications');
+    $this->load->view('dashboard-includes/footer');
+  }
+
+  public function notifications()
+  {
+    $institute_id = $_SESSION['institute_id'];
+    // print_r($_SESSION);exit();
+    $update_data = array(
+      'status' => '1',
+    );
+    $where = array('status' => '0');
+    $this->institute_model->updateAllData('notifications', $where, $update_data);
+    $where1 = array(
+      'institute_id' => $institute_id,
+    );
+    $data['notifications'] = $this->institute_model->getDataByDesc('notifications', $where1, 'notice_id');
+    $data['reminder'] =  [];
+    $data['site_title'] = "ZEQOON | Notifications";
+    $data['menu'] = 'Notifications';
+    $data['type'] = '1';
+    $this->load->view('dashboard-includes/header', $data);
+    $this->load->view('dashboard-includes/left-sidebar');
+    $this->load->view('notifications');
+    $this->load->view('dashboard-includes/footer');
+  }
+
 
 
   public function instituteLogin()
@@ -8359,32 +8416,7 @@ class Institute extends CI_Controller
     }
   }
 
-  public function notifications()
-  {
-    $institute_id = $_SESSION['institute_id'];
-    // print_r($_SESSION);exit();
-    $update_data = array(
-      'status' => '1',
-    );
-    $where = array('status' => '0');
-    $this->institute_model->updateAllData('notifications', $where, $update_data);
-    $where1 = array(
-      'institute_id' => $institute_id,
-    );
-    $data['notifications'] = $this->institute_model->getDataByDesc('notifications', $where1, 'notice_id');
-    $this->db->where('institute_id', $institute_id);
-    $this->db->where('reminder_date <=', date('Y-m-d'));
-    $this->db->order_by('created_at', "DESC");
-    $dataReminder = $this->db->get('lead_reminder');
-    $data['reminder'] =  $dataReminder->result();
-    $data['site_title'] = "ZEQOON | Notifications";
-    $data['menu'] = 'notifications';
-    $this->load->view('dashboard-includes/header', $data);
-    $this->load->view('dashboard-includes/left-sidebar');
-    $this->load->view('notifications');
-    $this->load->view('dashboard-includes/footer');
-  }
-
+  
   public function updatetaskstatus()
   {
     // echo "dsj chjd";exit();
@@ -8456,6 +8488,7 @@ class Institute extends CI_Controller
     $session = $this->session_check();
     if ($session == true) {
       $institute_id = $_SESSION['institute_id'];
+      $data['employee_id'] = $_SESSION['employee_id'];
       $where = array('institute_id' => $institute_id, 'id' => $lead_id);
       $data['lead'] = $this->institute_model->getAllDataArray('leads', $where);
       $where1 = array('institute_id' => $institute_id, 'lead_id' => $lead_id);
@@ -8467,7 +8500,6 @@ class Institute extends CI_Controller
       $data['courses'] = $this->institute_model->getAllDataArray('courses', $where_course);
       $data['states'] = $this->db->query("SELECT name,id FROM states WHERE country_id = '101' ")->result();
       $data['acount_details'] = $this->db->query("SELECT * FROM institute WHERE institute_id = " . $_SESSION['institute_id'] . " ")->result();
-
       $student_name = $data['lead'][0]->student_name;
       $where2 = array('institute_id' => $institute_id);
       $data['staffs'] = $this->institute_model->getAllDataArray('staff', $where2);
@@ -8677,8 +8709,11 @@ class Institute extends CI_Controller
     $reminder_date = $_POST['reminder_date'];
     $reminder_time = $_POST['reminder_time'];
     $lead_id = $_POST['lead_id'];
+    $employee_id = $_POST['employee_id'];
+    // $this->dd($_POST);
     $data = array(
       'lead_id' => $lead_id,
+      'employee_id' => $employee_id,
       'institute_id' => $institute_id,
       'reminder_content' => $reminder_content,
       'reminder_date' => $reminder_date,

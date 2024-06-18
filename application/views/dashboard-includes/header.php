@@ -178,8 +178,12 @@
                    if($this->session->userdata('is_staff_in'))
                    {
                     $emp_id = $_SESSION['employee_id'];
+                    $ins_id = $_SESSION['institute_id'];
+                    // print_r($_SESSION);
                     $notices = $this->db->query("SELECT * FROM notifications WHERE staff_id = '".$emp_id."' AND status = '0' ")->result();
+                    $tasks = $this->db->query("SELECT * FROM lead_reminder WHERE institute_id = '".$ins_id."' AND employee_id = '".$emp_id."'   AND reminder_date <= '".date('Y-m-d')."' AND reminder_time <= '".date('H:i:s')."' AND status = '0' ")->result();
                    $total_notice = count($notices);
+                   $total_tasks = count($tasks);
                    ?>
                     <li class="nav-item dropdown notice-con mr-3">
                         <a href="<?=base_url(); ?>institute/notifications" title="Notifications"> 
@@ -188,22 +192,17 @@
                          <div class="notice-number"><?=$total_notice; ?></div>
                         </a>
                     </li>
-                    <li class="nav-item dropdown notice-con mr-3">
-                        <a href="<?=base_url(); ?>institute/notifications"> 
-                         <img src="<?php echo base_url(); ?>assets/dashboard/img/bellicon.png">
-                         <div class="notice-number"><?=$total_notice; ?></div>
-                        </a>
-                    </li>
+                    
                     <?php
                     } 
                 ?>
 
                 <li class="nav-item dropdown notice-con mr-3">
-                    <a href="<?=base_url(); ?>institute/notifications" title="Assigned Tasks"> 
+                    <a href="<?=base_url(); ?>institute/tasks" title="Assigned Tasks"> 
                       <!-- <img src="<?php echo base_url(); ?>assets/dashboard/img/bellicon.png"> -->
                       <i class="bi bi-stopwatch fa-lg text-secondary"></i>
-                      <!-- <div class="notice-number"><?=$total_notice; ?></div> -->
-                      <div class="notice-number">3</div>
+                      <!-- <div class="notice-number"><?=$total_tasks; ?></div> -->
+                      <div class="notice-number"><?= $total_tasks; ?></div>
                     </a>
                 </li>
 

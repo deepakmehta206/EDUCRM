@@ -81,9 +81,9 @@ $db['default'] = array(
 	// 'username' => 'root',
 	// 'password' => '3339',
 
-	'username' => 'a8a2b2_vishal',
+	'username' => 'a8a2b2_prishacbn',
 	'database' => 'db_a8a2b2_cbnext',
-	'password' => 'Vishal@123',
+	'password' => 'Ilove@prisha123',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,

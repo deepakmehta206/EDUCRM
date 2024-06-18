@@ -370,6 +370,7 @@
 
                   <div class="submit-con my-2">
                     <input type="hidden" value="<?= $lead[0]->id; ?>" class="lead_id" name="lead_id" />
+                    <input type="hidden" value="<?= $employee_id; ?>" class="employee_id" name="employee_id" />
                     <button type="submit" class="btn btn-primary">Save</button>
                   </div>
                   <span class="text-success reminder-success"></span>
@@ -1691,6 +1692,7 @@
 </script>
 
 <script>
+  scoreMeter();
   function scoreMeter() {
     Highcharts.chart('meterChart', {
 

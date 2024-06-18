@@ -64,6 +64,7 @@ class Institute_model extends CI_Model{
         
         if($query->num_rows()>0){
             $row=$query->row();
+            
             $institute_id = $row->institute_id;
             $institute = $this->db->query("SELECT institute_logo FROM institute WHERE institute_id = '".$institute_id."' ")->row();
             $data = array(
