@@ -72,9 +72,7 @@ if ($_SESSION['is_institute_in'] == TRUE) {
 <script src="https://code.highcharts.com/highcharts.js"></script>
 <script src="https://code.highcharts.com/highcharts-more.js"></script>
 
-<script>
-  scoreMeter();
-</script>
+
 
 
 
